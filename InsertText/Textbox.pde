@@ -42,7 +42,7 @@ public class TextBox {
     stroke(outline);
     strokeWeight(2);
     fill(255);
-    rect(xCor, yCor, boxWidth, boxHeight);
+    rect(xCor, yCor, boxWidth, boxHeight, 4);
     updateText();
   }
   
@@ -51,7 +51,7 @@ public class TextBox {
     stroke(outline);
     strokeWeight(2);
     fill(255);
-    rect(xCor, yCor, boxWidth, boxHeight);
+    rect(xCor, yCor, boxWidth, boxHeight, 4);
     updateText();
   }
  
