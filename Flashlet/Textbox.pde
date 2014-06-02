@@ -1,10 +1,10 @@
 public class TextBox {
   
-  int xCor, yCor, boxWidth, boxHeight;
+  float xCor, yCor, boxWidth, boxHeight;
   String text = "";
   color outline;
   
-  TextBox(int x, int y) {
+  TextBox(float x, float y) {
     xCor = x;
     yCor = y;
     boxWidth = 300;
@@ -12,19 +12,19 @@ public class TextBox {
     outline = color(0);
   }
   
-  int getX() {
+  float getX() {
     return xCor;
   }
   
-  int getY() {
+  float getY() {
     return yCor;
   }
   
-  int getW() {
+  float getW() {
     return boxWidth;
   }
   
-  int getH() {
+  float getH() {
     return boxHeight;
   }  
   
@@ -34,7 +34,7 @@ public class TextBox {
   
   String setText(String newText) {
     String temp = text;
-    text= newText;
+    text = newText;
     return temp;
   }
 
@@ -42,7 +42,7 @@ public class TextBox {
     stroke(outline);
     strokeWeight(2);
     fill(255);
-    rect(xCor, yCor, boxWidth, boxHeight, 4);
+    rect(xCor, yCor, boxWidth, boxHeight);
     updateText();
   }
   
@@ -51,7 +51,7 @@ public class TextBox {
     stroke(outline);
     strokeWeight(2);
     fill(255);
-    rect(xCor, yCor, boxWidth, boxHeight, 4);
+    rect(xCor, yCor, boxWidth, boxHeight);
     updateText();
   }
  
