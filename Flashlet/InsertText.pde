@@ -5,11 +5,6 @@ Button home=new Button("Back","home","small",100,20);
 
 
 void newSet() {
-  setupBoxes();  
-  textSize(40);
-  text("Term", 40, 70);
-  text("Definition", 390, 70);
-  fill(250, 182, 8);
   update(mouseX, mouseY);
   for (TextBox b : tb) {
     b.updateText();

@@ -16,8 +16,8 @@ class Button{
      xcor=x;
      ycor=y;
      if (s.equals("small")){
-       w=100;
-       h=25;
+       w=150;
+       h=35;
        fsize=12;
        xoff=22;
        yoff=3;
@@ -53,6 +53,13 @@ class Button{
      if (hovered()){
        setup();
        page=functiontext;
+       if (functiontext.equals("newSet")){
+            setupBoxes();
+            textSize(40);
+            text("Term", 40, 70);
+            text("Definition", 390, 70);
+            fill(250, 182, 8);
+       }
      }
    }
 }
