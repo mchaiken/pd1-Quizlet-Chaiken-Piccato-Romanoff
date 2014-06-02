@@ -1,5 +1,5 @@
-class Button{
-  String displaytext;
+ class Button{
+String displaytext;
   String functiontext;
   String size;
   int xcor;
