@@ -22,10 +22,6 @@ void setupBoxes() {
     b.drawBox();
     text(b.getText(),100,100);
   }
-  println(tb[0].getX());
-  println(tb[0].getY());
-  println(tb[1].getX());
-  println(tb[1].getY());
 } 
 
 
