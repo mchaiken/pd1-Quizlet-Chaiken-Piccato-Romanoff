@@ -10,6 +10,9 @@
     if (page.equals("home")){
       homePage();
     }
+    else if(page.equals("setName")){
+      setName();
+    }
     else if(page.equals("newSet")){
       newSet();
     }
