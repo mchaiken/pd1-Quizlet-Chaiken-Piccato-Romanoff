@@ -22,10 +22,6 @@ void setupBoxes() {
     b.drawBox();
     text(b.getText(),100,100);
   }
-  println(tb[0].getX());
-  println(tb[0].getY());
-  println(tb[1].getX());
-  println(tb[1].getY());
 } 
 
 
@@ -77,6 +73,15 @@ void keyPressed() {
   if (boxPressed != -1) {
     if (key == BACKSPACE || key == DELETE) {
       tb[boxPressed].backSpace();
+    }
+    else if (key == TAB && boxPressed < tb.length - 1) {
+      tb[boxPressed].drawBox(color(0));
+      boxPressed++;
+      tb[boxPressed].drawBox(color(116, 226, 245));
+    }
+    else if ((key == TAB && boxPressed == tb.length - 1) || key == ENTER || key == ESC) {
+      tb[boxPressed].drawBox(color(0));
+      boxPressed = -1;
     }
     else {
       tb[boxPressed].updateText(key + "");
