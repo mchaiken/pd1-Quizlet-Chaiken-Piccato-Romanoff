@@ -3,9 +3,11 @@ int boxOver = -1;
 int boxPressed = -1;;
 Button home=new Button("Back","home","small",100,20);
 SubmitButton submit=new SubmitButton("Submit","submit","small",350,570);
+boolean shift = false;
 
 void newSet() {
   update(mouseX, mouseY);
+  println(shift);
   for (TextBox b : tb) {
     b.updateText();
   }
@@ -70,7 +72,10 @@ void mousePressed() {
 }
 
 void keyPressed() {
-  if (boxPressed != -1) {
+  if (key == CODED && keyCode == SHIFT) {
+    shift = true;
+  }
+  else if (boxPressed != -1) {
     if (key == BACKSPACE || key == DELETE) {
       tb[boxPressed].backSpace();
     }
@@ -84,8 +89,20 @@ void keyPressed() {
       boxPressed = -1;
     }
     else {
-      tb[boxPressed].updateText(key + "");
+      if (shift) {
+        tb[boxPressed].updateText(((key + "").toUpperCase() + ""));
+        
+      }
+      else {
+        tb[boxPressed].updateText(key + "");
+      }
     }
+  }
+}
+
+void keyReleased() {
+  if (key == CODED && keyCode == SHIFT) {
+    shift = false;
   }
 }
 
