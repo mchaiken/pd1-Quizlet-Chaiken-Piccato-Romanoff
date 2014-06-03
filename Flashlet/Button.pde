@@ -1,3 +1,4 @@
+ String setName="";
  class Button{
 String displaytext;
   String functiontext;
@@ -58,7 +59,8 @@ String displaytext;
             textSize(40);
             text("Term", 40, 70);
             text("Definition", 390, 70);
-            fill(250, 182, 8);
+            fill(250, 182, 8);     
+            setName=name.getText();
        }
      }
    }

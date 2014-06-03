@@ -15,9 +15,8 @@ class  SubmitButton extends Button{
        }
        */
        //ret+=temp.substring(1);
-       int r = (int) random(10);
-       File f = new File("cardSets/"+r+".txt");
-       PrintWriter out = createWriter("cardSets/"+r+".txt");
+       File f = new File("cardSets/"+setName+".txt");
+       PrintWriter out = createWriter("cardSets/"+setName+".txt");
        for (int x = 0; x < tb.length / 2; x++) {
          out.println(tb[x * 2].getText() + " " + tb[x * 2 + 1].getText());
        }
