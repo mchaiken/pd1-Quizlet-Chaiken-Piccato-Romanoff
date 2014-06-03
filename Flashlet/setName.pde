@@ -1,4 +1,4 @@
-TextBox name=new TextBox(200, 250);
+/*TextBox name=new TextBox(200, 250);
 
 void setName() {
   if (mousePressed) {
@@ -8,4 +8,4 @@ void setName() {
     name.keyPressed();
   }
 }    
-
+*/
