@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 TextBox name=new TextBox(200, 250);
 void setName(){
@@ -7,4 +8,16 @@ void setName(){
   createSet.draw();
   
 }
+=======
+/*TextBox name=new TextBox(200, 250);
+
+void setName() {
+  if (mousePressed) {
+    name.mousePressed();
+  }
+  else if (keyPressed) {
+    name.keyPressed();
+  }
+}    
+>>>>>>> 8af1e9fc4b4345a3abc4d19c11ac51f98a5fbfe2
 */

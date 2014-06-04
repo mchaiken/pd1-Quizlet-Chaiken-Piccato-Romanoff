@@ -1,28 +1,43 @@
 class Queue {
-  Flashcard head;
   int len;
+  Flashcard head;
+  Flashcard tail; 
+  
   Queue() {
-  head = null;
+    len = 0;
+    head = null;
+    tail = null;
   }
   
-  boolean add(String term, String definition) {
-   Flascard f = new Flashcard(term, definition);
+  void enqueue(Flashcard f) {
    if (head == null) {
     head = f;
-    return true;
+    tail = f;
    } 
    else {
-    f.setNext(head);
-    head = f;
-    return true;
+    tail.setNext(f);
+    tail = f;
    }
+   len++;
+  }
+  
+  Flashcard dequeue() {
+   Flashcard f = head;
+   if (head == null) {
+    return null; 
+   }
+   head = head.getNext();
+   if (head == null) {
+    tail = null; 
+   }
+   return f;
   }
   
   String toString() {
    String s = "";
    Flashcard temp = head;
    while (temp != null) {
-    s += temp;
+    s += temp.toString() + "\n";
     temp = temp.getNext(); 
    }
    return s;
