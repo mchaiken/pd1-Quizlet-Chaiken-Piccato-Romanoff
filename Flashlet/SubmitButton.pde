@@ -16,8 +16,8 @@ class  SubmitButton extends Button{
        }
        */
        //ret+=temp.substring(1);
-       File f = new File("cardSets/"+setName()+".txt");
-       PrintWriter out = createWriter("cardSets/"+setName+".txt");
+       File f = new File("cardSets/"+".txt");
+       PrintWriter out = createWriter("cardSets/"+".txt");
        for (int x = 0; x < tb.length / 2; x++) {
          out.println(tb[x * 2].getText() + " " + tb[x * 2 + 1].getText());
        }
@@ -28,6 +28,7 @@ class  SubmitButton extends Button{
        }
      }
    }
+   /*
 class  SubmitButton extends Button {
 
 
@@ -49,4 +50,4 @@ class  SubmitButton extends Button {
       page="home";
     }
   }
-}
+}*/
