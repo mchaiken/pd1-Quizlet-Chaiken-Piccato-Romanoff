@@ -8,6 +8,7 @@ class  SubmitButton extends Button {
   void mouseClicked() {
     if (hovered()) {
       String ret = "";
+      int setName= (int)random(10);
       File f = new File("cardSets/"+setName+".txt");
       PrintWriter out = createWriter("cardSets/"+setName+".txt");
       for (int x = 0; x < tb.length / 2; x++) {

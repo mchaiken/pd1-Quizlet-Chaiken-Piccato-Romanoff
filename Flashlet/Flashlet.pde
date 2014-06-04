@@ -10,7 +10,7 @@ void draw() {
   if (page.equals("home")) {
     homePage();
   } else if (page.equals("setName")) {
-    newSet();
+    setName();
   } else if (page.equals("newSet")) {
     newSet();
   }
