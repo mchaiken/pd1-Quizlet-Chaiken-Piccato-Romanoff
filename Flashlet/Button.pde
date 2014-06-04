@@ -70,13 +70,12 @@ class Button {
         fill(250, 182, 8);     
         //setName=name.getText();
       }
-      /*else if (functiontext.equals("nameSet")) {
+      else if (functiontext.equals("setName")) {
         text("Name Your Set:", 250, 240);
         Button createSet=new Button("Create Set", "newSet", "large", 350, 350);
         name.drawBox(); 
-
         createSet.draw();
-      }*/
+      }
       }
     }
   }

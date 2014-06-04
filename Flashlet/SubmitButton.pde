@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class  SubmitButton extends Button{
   
   
@@ -27,3 +28,28 @@ class  SubmitButton extends Button{
        }
      }
    }
+=======
+class  SubmitButton extends Button {
+
+
+  SubmitButton(String t, String f, String s, int x, int y) {
+    super(t, f, s, x, y);
+  }
+
+  void mouseClicked() {
+    if (hovered()) {
+      String ret = "";
+      int setName= (int)random(10);
+      File f = new File("cardSets/"+setName+".txt");
+      PrintWriter out = createWriter("cardSets/"+setName+".txt");
+      for (int x = 0; x < tb.length / 2; x++) {
+        out.println(tb[x * 2].getText() + " " + tb[x * 2 + 1].getText());
+      }
+      out.close();
+      setup();
+      page="home";
+    }
+  }
+}
+
+>>>>>>> cd3c85e59ca4d8f9b289724897443fef5462e8ca

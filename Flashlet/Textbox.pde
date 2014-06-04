@@ -60,23 +60,18 @@ public class TextBox {
   void keyPressed() {
     if (key == CODED && keyCode == SHIFT) {
       shift = true;
-    } 
-    else if (selected) {
+    } else if (selected) {
       if (key == BACKSPACE || key == DELETE) {
         backSpace();
-      } 
-      else if (key == TAB) {
+      } else if (key == TAB) {
         drawBox(color(0));
         drawBox(color(116, 226, 245));
-      } 
-      else if ((key == TAB ) || key == ENTER || key == ESC) {
+      } else if ((key == TAB ) || key == ENTER || key == ESC) {
         drawBox(color(0));
-      } 
-      else {
+      } else {
         if (shift) {
           updateText(((key + "").toUpperCase() + ""));
-        } 
-        else {
+        } else {
           updateText(key + "");
         }
       }
@@ -127,5 +122,6 @@ public class TextBox {
       drawBox();
     }
   }
+
 }
 
