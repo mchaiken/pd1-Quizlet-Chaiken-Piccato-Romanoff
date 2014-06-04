@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 String setName="";
->>>>>>> 8af1e9fc4b4345a3abc4d19c11ac51f98a5fbfe2
 class Button {
   String displaytext;
   String functiontext;
@@ -60,13 +57,11 @@ class Button {
         textSize(40);
         text("Term", 40, 70);
         text("Definition", 390, 70);
-<<<<<<< HEAD
         fill(250, 182, 8);
       }
     }
   }
 }
-=======
         fill(250, 182, 8);     
         //setName=name.getText();
       }
@@ -79,5 +74,4 @@ class Button {
       }
     }
   }
->>>>>>> 8af1e9fc4b4345a3abc4d19c11ac51f98a5fbfe2
 

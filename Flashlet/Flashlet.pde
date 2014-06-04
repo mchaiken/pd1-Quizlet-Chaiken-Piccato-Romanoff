@@ -1,4 +1,3 @@
-<<<<<<< HEAD
   String page="home";
   PFont font;
   void setup() {
@@ -17,7 +16,6 @@
     else if(page.equals("newSet")){
       newSet();
     }
-=======
 String page="home";
 PFont font;
 void setup() {
@@ -33,7 +31,7 @@ void draw() {
     setName();
   } else if (page.equals("newSet")) {
     newSet();
->>>>>>> cd3c85e59ca4d8f9b289724897443fef5462e8ca
+
   }
   
 

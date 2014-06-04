@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 class  SubmitButton extends Button{
   
   
@@ -28,7 +28,6 @@ class  SubmitButton extends Button{
        }
      }
    }
-=======
 class  SubmitButton extends Button {
 
 
@@ -51,5 +50,3 @@ class  SubmitButton extends Button {
     }
   }
 }
-
->>>>>>> cd3c85e59ca4d8f9b289724897443fef5462e8ca
