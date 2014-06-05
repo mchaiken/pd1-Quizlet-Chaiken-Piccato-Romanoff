@@ -1,19 +1,22 @@
 
 TextBox name=new TextBox(200, 250);
+Button createSet=new Button("Create Set", "newSet", "large", 350, 350);
 /*
 void setName(){
-  text("Name Your Set:",250,240);
-  Button createSet=new Button("Create Set","newSet","large",350,350);
-  name.drawBox(); 
-  createSet.draw();
-  
-}
-*/
+ text("Name Your Set:",250,240);
+ Button createSet=new Button("Create Set","newSet","large",350,350);
+ name.drawBox(); 
+ createSet.draw();
+ 
+ }
+ */
 void setName() {
   if (mousePressed) {
     name.mousePressed();
   }
-  if (keyPressed){
+  if (keyPressed) {
     name.keyPressed();
   }
+  createSet.draw();
 }
+
