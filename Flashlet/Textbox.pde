@@ -33,6 +33,10 @@ public class TextBox {
   String getText() {
     return text;
   }
+  
+  boolean getShift() {
+    return shift;
+  }
 
   String setText(String newText) {
     String temp = text;
@@ -44,7 +48,7 @@ public class TextBox {
     return (mouseY >= getY() && mouseY <= getY() + getH()) && (mouseX >= getX() && mouseX <= getX() + getW());
   }
   void changeSelected() {
-    if (!selected) {
+    if (selected) {
       drawBox(color(116, 226, 245));
     } else {
       drawBox(color(0));
@@ -58,7 +62,6 @@ public class TextBox {
     }
   }
   void keyPressed() {
-    println(text);
     if (key == CODED && keyCode == SHIFT) {
       shift = true;
     } else if (selected) {

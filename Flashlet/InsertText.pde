@@ -8,7 +8,6 @@ boolean shift = false;
 
 void newSet() {
   update(mouseX, mouseY);
-  println(shift);
   for (TextBox b : tb) {
     b.updateText();
   }
