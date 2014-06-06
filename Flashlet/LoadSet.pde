@@ -1,6 +1,6 @@
-Queue queue;
+/*Queue q;
 void loadSet() {
- queue = new Queue();
+ q = new Queue();
  String[] data = loadStrings("set.txt");
  //println(Arrays.toString(data));
  for (String d: data) {
@@ -8,12 +8,12 @@ void loadSet() {
    String term = d.substring(0,space);
    String definition = d.substring(space+1);
    Flashcard f = new Flashcard(term, definition);
-   queue.enqueue(f);
+   q.enqueue(f);
  }
- println(queue.toString());
+ println(q.toString());
  
  size(900, 900);
  img = loadImage("Cards.jpg");
  image(img,0,0);
 } 
-
+*/
