@@ -1,7 +1,7 @@
 TextBox[] tb;
 int boxOver = -1;
 int boxPressed = -1;
-;
+
 Button home=new Button("Back", "home", "small", 100, 20);
 SubmitButton submit=new SubmitButton("Submit", "submit", "small", 350, 570);
 boolean shift = false;

@@ -13,7 +13,10 @@ void draw() {
     setName();
   } else if (page.equals("newSet")) {
     newSet();
+  } else if (page.equals("createSet")) {
+    newSet(); 
+  }
 
   }
-}
+
 

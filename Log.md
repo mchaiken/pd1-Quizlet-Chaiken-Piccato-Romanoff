@@ -7,4 +7,7 @@
 6/2 - Aida - Created LoadSet file, with initial Flashcard and Queue classes. Also added set.txt file to test the processing of data from the set file
 
 6/3 - Aida - Added to LoadSet, completed enqueue and dequeue methods; flashcards can now be stored in a queue from the text file
+
 6/3 - Nick - capital letters and some improvements for efficiency 
+
+6/5 - Aida -In LoadSet folder, now able to display flashcards in a set and their definition.
