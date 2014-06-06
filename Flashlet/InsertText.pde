@@ -93,6 +93,7 @@ void keyPressed() {
 }
 
 void keyReleased() {
+  keybeenReleased=true;
   if (key == CODED && keyCode == SHIFT) {
     shift = false;
   }

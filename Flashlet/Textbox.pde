@@ -59,6 +59,7 @@ public class TextBox {
   }
   void keyPressed() {
     println(text);
+    keybeenReleased=false;
     if (key == CODED && keyCode == SHIFT) {
       shift = true;
     } else if (selected) {
