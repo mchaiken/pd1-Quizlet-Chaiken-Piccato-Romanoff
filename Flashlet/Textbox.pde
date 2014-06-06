@@ -5,7 +5,7 @@ public class TextBox {
   color outline;
   boolean selected=false;
   boolean shift = false;
-
+ 
   TextBox(float x, float y) {
     xCor = x;
     yCor = y;
