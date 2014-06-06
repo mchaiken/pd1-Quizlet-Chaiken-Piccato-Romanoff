@@ -1,4 +1,4 @@
- class Flashcard{
+ class Flashcard {
  String term = "";
  String definition = "";
  Flashcard next = null;
@@ -16,11 +16,20 @@
   next = f;
  }
  
- Flashcard getNext() {
+ String getTerm() {
+  return term; 
+ }
+ 
+ String getDef() {
+  return definition; 
+ }
+ Flashcard next() {
   return next;
  }
-
+ 
  String toString() {
   return "TERM: " + term + " DEF: " + definition;
  }
+ 
+ 
 }

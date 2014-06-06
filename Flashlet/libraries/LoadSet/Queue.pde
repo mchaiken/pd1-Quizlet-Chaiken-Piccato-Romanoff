@@ -26,7 +26,7 @@ class Queue {
    if (head == null) {
     return null; 
    }
-   head = head.getNext();
+   head = head.next();
    if (head == null) {
     tail = null; 
    }
@@ -36,9 +36,9 @@ class Queue {
   String toString() {
    String s = "";
    Flashcard temp = head;
-   while (temp != null) {
+   {
     s += temp.toString() + "\n";
-    temp = temp.getNext(); 
+    temp = temp.next(); 
    }
    return s;
   }
