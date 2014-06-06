@@ -5,12 +5,12 @@ Button createSet=new Button("Create Set", "newSet", "large", 350, 350);
 void setName() {
   
   name.updateText();
-  if (mousePressed) {
+  if (mousePressed)
     name.mousePressed();
-  }
-  if (keyPressed) {
+  println(keyPressed);
+  if (keyPressed)
     name.keyPressed();
-  }
+ 
  
 }
 

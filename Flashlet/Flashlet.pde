@@ -4,6 +4,7 @@ void setup() {
   size(700, 600);
   background(188, 210, 238);
   font=loadFont("Baskerville-SemiBold-48.vlw");
+  frameRate(10);
 }
 
 void draw() {
