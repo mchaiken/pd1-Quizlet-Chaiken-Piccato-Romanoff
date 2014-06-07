@@ -8,14 +8,7 @@ void setName() {
   println(name.getShift());
   if (mousePressed) {
     name.mousePressed();
-<<<<<<< HEAD
-  println(keyPressed);
-
   if (keyPressed && keybeenReleased)
-=======
-  }
-  if (keyPressed) {
->>>>>>> FETCH_HEAD
     name.keyPressed();
   }
 }

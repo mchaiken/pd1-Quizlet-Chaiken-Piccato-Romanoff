@@ -48,7 +48,7 @@ public class TextBox {
     return (mouseY >= getY() && mouseY <= getY() + getH()) && (mouseX >= getX() && mouseX <= getX() + getW());
   }
   void changeSelected() {
-    if (selected) {
+    if (!selected) {
       drawBox(color(116, 226, 245));
     } else {
       drawBox(color(0));
@@ -62,11 +62,11 @@ public class TextBox {
     }
   }
   void keyPressed() {
-<<<<<<< HEAD
+
     println(text);
     keybeenReleased=false;
-=======
->>>>>>> FETCH_HEAD
+
+
     if (key == CODED && keyCode == SHIFT) {
       shift = true;
     } else if (selected) {
