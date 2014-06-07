@@ -50,9 +50,11 @@ class Button {
   }
   void mouseClicked() {
     if (hovered()) {
+      background(188, 210, 238);
       setup();
       page=functiontext;
       if (functiontext.equals("newSet")) {
+        setName();
         setupBoxes();
         textSize(40);
         text("Term", 40, 70);
@@ -60,12 +62,6 @@ class Button {
         fill(250, 182, 8);
         //setName=name.getText();
       } 
-      else if (functiontext.equals("setName")) {
-        text("Name Your Set:", 250, 240);
-        Button createSet=new Button("Create Set", "newSet", "large", 350, 350);
-        name.drawBox(); 
-        createSet.draw();
-      }
     }
   }
 }

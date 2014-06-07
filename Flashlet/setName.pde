@@ -1,14 +1,7 @@
-TextBox name=new TextBox(200, 250);
-Button createSet=new Button("Create Set", "newSet", "large", 350, 350);
+import static javax.swing.JOptionPane.*;
+String flash_card_set_name;
 boolean keybeenReleased=true;
 void setName() {
-  createSet.draw();
-  home.draw();
-  name.updateText();
-  println(name.getShift());
-  if (mousePressed) {
-    name.mousePressed();
-  if (keyPressed && keybeenReleased)
-    name.keyPressed();
-  }
+  flash_card_set_name = showInputDialog("Name your flashcard Set");
 }
+

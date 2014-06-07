@@ -8,6 +8,7 @@ boolean shift = false;
 
 void newSet() {
   update(mouseX, mouseY);
+  println(shift);
   for (TextBox b : tb) {
     b.updateText();
   }
@@ -69,7 +70,6 @@ void mousePressed() {
 }
 
 void keyPressed() {
-  keybeenReleased=false;
   if (key == CODED && keyCode == SHIFT) {
     shift = true;
   } else if (boxPressed != -1) {

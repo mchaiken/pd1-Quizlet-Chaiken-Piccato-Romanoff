@@ -33,10 +33,6 @@ public class TextBox {
   String getText() {
     return text;
   }
-  
-  boolean getShift() {
-    return shift;
-  }
 
   String setText(String newText) {
     String temp = text;
@@ -62,11 +58,8 @@ public class TextBox {
     }
   }
   void keyPressed() {
-
     println(text);
     keybeenReleased=false;
-
-
     if (key == CODED && keyCode == SHIFT) {
       shift = true;
     } else if (selected) {
