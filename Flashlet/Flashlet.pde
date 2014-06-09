@@ -2,10 +2,9 @@ String page="home";
 PFont font;
 void setup() {
   size(700, 600);
-  fill(188, 210, 238);
-  rect(0,0,700,600);
+  background(188, 210, 238);
   font=loadFont("Baskerville-SemiBold-48.vlw");
-  frameRate(12);
+
 }
 
 void draw() {
