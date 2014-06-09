@@ -1,7 +1,5 @@
-
 class  SubmitButton extends Button{
-  
-  
+
   SubmitButton(String t, String f, String s, int x, int y){
      super(t,f,s,x,y);
      }
