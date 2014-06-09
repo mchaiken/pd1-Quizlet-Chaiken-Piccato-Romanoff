@@ -9,6 +9,7 @@ String flash_card_set_name;
 boolean keybeenReleased=true;
 >>>>>>> c93feed2ee9c25ed17e00ebcd1b935c07e943bf2
 void setName() {
-  flash_card_set_name = showInputDialog("Name your flashcard Set");
+  while( flash_card_set_name == null || flash_card_set_name.equals(""))
+    flash_card_set_name = showInputDialog("Name your flashcard Set");
 }
 

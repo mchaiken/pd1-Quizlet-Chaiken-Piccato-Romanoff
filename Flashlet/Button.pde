@@ -32,9 +32,9 @@ class Button {
   }
   void draw() {
     if (hovered()) {
-      fill(150, 250, 255);
+      fill(160, 160, 160);
     } else {
-      fill(0, 200, 255);
+      fill(244, 244, 244);
     }
     ellipse(xcor, ycor, w, h);
     fill(0);
@@ -51,7 +51,6 @@ class Button {
   void mouseClicked() {
     if (hovered()) {
       background(188, 210, 238);
-      setup();
       page=functiontext;
       if (functiontext.equals("newSet")) {
         setName();
@@ -61,7 +60,7 @@ class Button {
         text("Definition", 390, 70);
         fill(250, 182, 8);
         //setName=name.getText();
-      } 
+      }
     }
   }
 }
