@@ -1,3 +1,4 @@
+
 import gifAnimation.*;
 String page="loading";
 PFont font; 
@@ -5,6 +6,7 @@ String fT;
 double time=millis();
 Gif nonLoopingGif;
 Gif load;
+
 void setup() {
   size(700, 600);
   background(188, 210, 238);
@@ -25,7 +27,14 @@ void draw() {
     newSet();
   } else if (page.equals("createSet")) {
     newSet();
+  } else if (page.equals("loadSet")) {
+    Quiz quiz = new Quiz("set");
+    quiz.draw();
+    if (keyPressed) {
+     quiz.keyPressed(); 
+    }
   }
+  
   else if(page.equals("loading")){
     loadingPage(fT);
   }

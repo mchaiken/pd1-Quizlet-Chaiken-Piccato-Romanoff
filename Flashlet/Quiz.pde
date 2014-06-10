@@ -3,9 +3,10 @@ PFont font;
 PImage img;
 boolean defDisplayed;
 Flashcard currentCard;
-void setup() {
+class Quiz {
+void Quiz(String setName) {
  queue = new Queue();
- String[] data = loadStrings("set.txt");
+ String[] data = loadStrings(setName + ".txt");
  for (String d: data) {
    int space = d.indexOf(" ");
    String term = d.substring(0,space);
@@ -61,7 +62,7 @@ void setup() {
    textAlign(CENTER);
    text(currentCard.getDef(), 350, 460);  
  }
-   
+}
  
 
 
