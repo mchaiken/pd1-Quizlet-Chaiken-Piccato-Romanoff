@@ -1,5 +1,4 @@
-Queue queue;
-PFont font;
+/*Queue queue;
 PImage img;
 boolean defDisplayed;
 Flashcard currentCard;
@@ -61,7 +60,7 @@ void setup() {
    textAlign(CENTER);
    text(currentCard.getDef(), 350, 460);  
  }
-   
+   */
  
 
 
