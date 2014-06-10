@@ -1,21 +1,22 @@
-String page="home";
+import gifAnimation.*;
+String page="loading";
 PFont font;
-double time;
-PImage load;
+String fT;
+double time=millis();
+Gif nonLoopingGif;
+Gif load;
 void setup() {
   size(700, 600);
-  background(255, 255, 255);
+  background(188, 210, 238);
   time=millis();
-  load= loadImage("loading.gif");  
-
+  nonLoopingGif = new Gif(this, "loading.gif");
+  nonLoopingGif.play();
+  fT="home";
   font=loadFont("Baskerville-SemiBold-48.vlw");
 }
 
 void draw() {
-  while (millis ()<time+2000)
-  {
-    image(load, 125, 50);
-  }
+
   if (page.equals("home")) {
     homePage();
   } else if (page.equals("setName")) {
@@ -24,6 +25,9 @@ void draw() {
     newSet();
   } else if (page.equals("createSet")) {
     newSet();
+  }
+  else if(page.equals("loading")){
+    loadingPage(fT);
   }
 }
 
