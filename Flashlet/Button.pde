@@ -48,31 +48,12 @@ class Button {
   boolean hovered() {
     return ((mouseX > xcor-(w/2) && mouseX < xcor+(w/2))&&(mouseY> ycor-(h/2) && mouseY < ycor+(h/2)));
   }
-  void mouseClicked() {
+void mouseClicked() {
     if (hovered()) {
-<<<<<<< HEAD
-      background(188, 210, 238);
-      setup();
-      page=functiontext;
-      if (functiontext.equals("newSet")) {
-        setName();
-        setupBoxes();
-        textSize(40);
-        text("Term", 40, 70);
-        text("Definition", 390, 70);
-        fill(250, 182, 8);
-        //setName=name.getText();
-      } 
-      else if (functiontext.equals("loadSet")) {
-        loadSet();
-      }
-=======
       time=millis();
       fT=functiontext;
      page="loading";
      background(188, 210, 238);
-     
->>>>>>> a5ea26e2e85cc27c93c63eeec95f721c8a7bf23d
     }
   }
 }

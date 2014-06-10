@@ -1,6 +1,6 @@
 import gifAnimation.*;
 String page="loading";
-PFont font;
+PFont font; 
 String fT;
 double time=millis();
 Gif nonLoopingGif;
