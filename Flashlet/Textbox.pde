@@ -3,7 +3,7 @@ public class TextBox {
   float xCor, yCor, boxWidth, boxHeight;
   String text = "";
   color outline;
-  boolean selected=false;
+  boolean selected = false;
   boolean shift = false;
  
   TextBox(float x, float y) {
