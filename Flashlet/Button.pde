@@ -62,6 +62,9 @@ class Button {
         fill(250, 182, 8);
         //setName=name.getText();
       } 
+      else if (functiontext.equals("loadSet")) {
+        loadSet();
+      }
     }
   }
 }

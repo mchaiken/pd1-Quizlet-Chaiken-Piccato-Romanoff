@@ -16,4 +16,15 @@ void loadSet() {
  img = loadImage("Cards.jpg");
  image(img,0,0);
 } 
-*/
+ */
+
+void loadSet() {
+  File folder = new File("Desktop/");
+  println(folder); 
+  println(folder.exists());
+ //String[] files = folder.list();
+  //for (String s : files) {
+    //println(s);
+  //}
+}
+
