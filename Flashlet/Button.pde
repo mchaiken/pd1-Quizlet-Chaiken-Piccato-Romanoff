@@ -32,9 +32,9 @@ class Button {
   }
   void draw() {
     if (hovered()) {
-      fill(150, 250, 255);
+      fill(160, 160, 160);
     } else {
-      fill(0, 200, 255);
+      fill(244, 244, 244);
     }
     ellipse(xcor, ycor, w, h);
     fill(0);
@@ -50,6 +50,7 @@ class Button {
   }
   void mouseClicked() {
     if (hovered()) {
+<<<<<<< HEAD
       background(188, 210, 238);
       setup();
       page=functiontext;
@@ -65,6 +66,13 @@ class Button {
       else if (functiontext.equals("loadSet")) {
         loadSet();
       }
+=======
+      time=millis();
+      fT=functiontext;
+     page="loading";
+     background(188, 210, 238);
+     
+>>>>>>> a5ea26e2e85cc27c93c63eeec95f721c8a7bf23d
     }
   }
 }
