@@ -1,7 +1,7 @@
 
 import gifAnimation.*;
 String page="loading";
-PFont font; 
+PFont f; 
 String fT;
 double time=millis();
 Gif nonLoopingGif;
@@ -28,10 +28,11 @@ void draw() {
   } else if (page.equals("createSet")) {
     newSet();
   } else if (page.equals("loadSet")) {
-    Quiz quiz = new Quiz("set");
+    Quiz quiz = new Quiz("Aida");
     quiz.draw();
     if (keyPressed) {
      quiz.keyPressed(); 
+     quiz.draw();
     }
   }
   

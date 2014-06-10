@@ -1,10 +1,10 @@
 Queue queue;
 PFont font;
-PImage img;
+PImage cards;
 boolean defDisplayed;
 Flashcard currentCard;
 class Quiz {
-void Quiz(String setName) {
+Quiz(String setName) {
  queue = new Queue();
  String[] data = loadStrings(setName + ".txt");
  for (String d: data) {
@@ -16,8 +16,8 @@ void Quiz(String setName) {
  }
    size(700, 600); 
    background(188, 210, 238);
-   img = loadImage("Cards.jpg");
-   image(img,0,0);
+   cards = loadImage("Cards.jpg");
+   image(cards,0,0);
    font = loadFont("Baskerville-SemiBold-48.vlw");
    
    currentCard = queue.dequeue();
@@ -29,7 +29,9 @@ void Quiz(String setName) {
    defDisplayed = false;
  }
 
- void draw() {}
+ void draw() {
+   
+ }
  
  void keyPressed() {
    if (keyCode == 32) {
