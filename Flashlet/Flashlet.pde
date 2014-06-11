@@ -36,9 +36,9 @@ void draw() {
     if (keyPressed) {
      quiz.keyPressed(); 
      quiz.draw();
-    }*/
-     
     }
+     
+    }*/
   }
   else if (page.equals("loading")){
     loadingPage(fT);
