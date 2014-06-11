@@ -17,11 +17,8 @@ void loadingPage(String functiontext) {
       //setName=name.getText();
     }
     if (functiontext.equals("loadSet")) {
-<<<<<<< HEAD
-      File folder = new File("sets");
-=======
       File folder = new File("pd1-Quizlet-Chaiken-Piccato-Romanoff/Flashlet/cardSets");
->>>>>>> FETCH_HEAD
+
       File[] listOfFiles = folder.listFiles();
       text("Select a Set to Study:",30,30);
       for (int i = 0; i < listOfFiles.length; i++) {

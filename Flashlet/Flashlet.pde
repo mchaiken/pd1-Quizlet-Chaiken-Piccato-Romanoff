@@ -31,23 +31,14 @@ void draw() {
     newSet();
         /*
   } else if (page.equals("loadSet")) {
-<<<<<<< HEAD
-  /*  Quiz quiz = new Quiz("Aida");
-=======
-
     Quiz quiz = new Quiz("Aida");
->>>>>>> FETCH_HEAD
     quiz.draw();
     if (keyPressed) {
      quiz.keyPressed(); 
      quiz.draw();
-<<<<<<< HEAD
     }*/
-=======
      
     }
-    */
->>>>>>> FETCH_HEAD
   }
   else if (page.equals("loading")){
     loadingPage(fT);
