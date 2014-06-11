@@ -21,10 +21,14 @@ void loadingPage(String functiontext) {
 
       File[] listOfFiles = folder.listFiles();
       text("Select a Set to Study:",30,30);
+      int x=0;
       for (int i = 0; i < listOfFiles.length; i++) {
         if (listOfFiles[i].isFile()) {
           println(listOfFiles[i].getName());
-          sets.add(new CardSet(listOfFiles[i].getName().substring(0,listOfFiles[i].getName().indexOf(".")), 5, i*50+55+i*5));
+          if (!listOfFiles[i].getName().substring(0,listOfFiles[i].getName().indexOf(".")).equals("")){
+            sets.add(new CardSet(listOfFiles[i].getName().substring(0,listOfFiles[i].getName().indexOf(".")), 5, x*50+55+i*5));
+            x++;
+          }
         }
       }
     }
