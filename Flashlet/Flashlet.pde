@@ -3,8 +3,12 @@ import gifAnimation.*;
 import java.util.*;
 import java.io.*;
 String page = "loading";
+String quizName="";
+Quiz currentQuiz;
+Quiz currentLearn;
 PFont font; 
 String fT;
+Quiz currentQuiz;
 double time=millis();
 Gif nonLoopingGif;
 Gif load;
@@ -17,10 +21,10 @@ void setup() {
   nonLoopingGif.play();
   fT="home";
   font=loadFont("Baskerville-SemiBold-48.vlw");
+  currentQuiz = null;
 }
 
 void draw() {
-
   if (page.equals("home")) {
     homePage();
   } else if (page.equals("setName")) {
@@ -29,22 +33,17 @@ void draw() {
     newSet();
   } else if (page.equals("createSet")) {
     newSet();
-        /*
-  } else if (page.equals("loadSet")) {
-    Quiz quiz = new Quiz("Aida");
-    quiz.draw();
-    if (keyPressed) {
-     quiz.keyPressed(); 
-     quiz.draw();
-    }
-     
-    }*/
-  }
-  else if (page.equals("loading")){
+  } else if (page.equals("loading")) {
     loadingPage(fT);
-  }
-  else if (page.equals("loadSet")){
+  } else if (page.equals("loadSet")) {
     cardSets();
   }
+  else if(page.equals("study")){
+    currentQuiz.draw();
+  }
+  else if(page.equals("learn")){
+    currentLearn.draw();
+  }
+    
 }
 
