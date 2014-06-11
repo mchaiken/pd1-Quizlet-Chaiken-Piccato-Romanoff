@@ -29,13 +29,17 @@ void draw() {
     newSet();
   } else if (page.equals("createSet")) {
     newSet();
+        /*
   } else if (page.equals("loadSet")) {
+
     Quiz quiz = new Quiz("Aida");
     quiz.draw();
     if (keyPressed) {
      quiz.keyPressed(); 
      quiz.draw();
+     
     }
+    */
   }
   else if (page.equals("loading")){
     loadingPage(fT);
