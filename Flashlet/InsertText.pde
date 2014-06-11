@@ -73,6 +73,7 @@ void keyPressed() {
   if (page == "quiz" && keyCode == 32) {
      if (!defDisplayed) {
        currentQuiz.revealDefinition();
+       
      }
      else {
       currentCard = queue.dequeue();

@@ -23,9 +23,10 @@ class Queue {
   
   Flashcard dequeue() {
    Flashcard f = head;
-   if (head == null) {
-    return null; 
+   while(f.equals(null)) {
+    f=f.next();
    }
+   enqueue(f);
    head = head.next();
    if (head == null) {
     tail = null; 

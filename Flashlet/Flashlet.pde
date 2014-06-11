@@ -8,7 +8,6 @@ Quiz currentQuiz;
 Quiz currentLearn;
 PFont font; 
 String fT;
-Quiz currentQuiz;
 double time=millis();
 Gif nonLoopingGif;
 Gif load;
@@ -37,15 +36,12 @@ void draw() {
     loadingPage(fT);
   } else if (page.equals("loadSet")) {
     cardSets();
-<<<<<<< HEAD
   }
-  else if(page.equals("study")){
-    currentQuiz.draw();
+  else if(page.equals("quiz")){
+    
   }
   else if(page.equals("learn")){
     currentLearn.draw();
-=======
->>>>>>> FETCH_HEAD
   }
     
 }
