@@ -1,11 +1,7 @@
-<<<<<<< HEAD:Flashlet/Quiz.pde
-Queue queue;
-PFont font;
+
+
 PImage cards;
-=======
-/*Queue queue;
-PImage img;
->>>>>>> e50fe098d0d3b0516136308f15018ab17db560c8:Flashlet/LoadSet.pde
+Queue queue;
 boolean defDisplayed;
 Flashcard currentCard;
 class Quiz {
@@ -23,7 +19,6 @@ Quiz(String setName) {
    background(188, 210, 238);
    cards = loadImage("Cards.jpg");
    image(cards,0,0);
-   font = loadFont("Baskerville-SemiBold-48.vlw");
    
    currentCard = queue.dequeue();
    fill(0);
@@ -69,11 +64,7 @@ Quiz(String setName) {
    textAlign(CENTER);
    text(currentCard.getDef(), 350, 460);  
  }
-<<<<<<< HEAD:Flashlet/Quiz.pde
 }
-=======
-   */
->>>>>>> e50fe098d0d3b0516136308f15018ab17db560c8:Flashlet/LoadSet.pde
  
 
 
