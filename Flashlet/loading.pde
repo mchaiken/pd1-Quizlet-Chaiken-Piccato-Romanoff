@@ -22,7 +22,7 @@ void loadingPage(String functiontext) {
       text("Select a Set to Study:",30,30);
       for (int i = 0; i < listOfFiles.length; i++) {
         if (listOfFiles[i].isFile()) {
-          sets.add(new CardSet(listOfFiles[i].getName(), 5, i*50+55+i*5));
+          sets.add(new CardSet(listOfFiles[i].getName().substring(0,listOfFiles[i].getName().indexOf(".")), 5, i*50+55+i*5));
         }
       }
     }
