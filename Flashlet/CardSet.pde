@@ -30,7 +30,8 @@ public class CardSet {
     }
   }
   void mouseClicked() {
-    //Quiz n =new Quiz("cardSets/"+displaytext+".txt");
+    page = "quiz";
+    currentQuiz = new Quiz(displaytext);   
   }
   boolean hovered() {
     return ((mouseX > xcor && mouseX < xcor+w )&&(mouseY> ycor && mouseY < ycor+h));
