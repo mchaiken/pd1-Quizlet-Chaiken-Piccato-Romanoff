@@ -37,12 +37,15 @@ void draw() {
     loadingPage(fT);
   } else if (page.equals("loadSet")) {
     cardSets();
+<<<<<<< HEAD
   }
   else if(page.equals("study")){
     currentQuiz.draw();
   }
   else if(page.equals("learn")){
     currentLearn.draw();
+=======
+>>>>>>> FETCH_HEAD
   }
     
 }

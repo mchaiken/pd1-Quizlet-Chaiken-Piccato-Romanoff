@@ -31,7 +31,12 @@ public class CardSet {
   }
   void mouseClicked() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     quizName=displaytext;
+=======
+    page = "quiz";
+    currentQuiz = new Quiz(displaytext);   
+>>>>>>> FETCH_HEAD
 =======
     page = "quiz";
     currentQuiz = new Quiz(displaytext);   
