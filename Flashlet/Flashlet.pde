@@ -2,8 +2,8 @@
 import gifAnimation.*;
 import java.util.*;
 import java.io.*;
-String page="loading";
-PFont f; 
+String page = "loading";
+PFont font; 
 String fT;
 double time=millis();
 Gif nonLoopingGif;
@@ -37,11 +37,10 @@ void draw() {
      quiz.draw();
     }
   }
-  
-  else if(page.equals("loading")){
+  else if (page.equals("loading")){
     loadingPage(fT);
   }
-  else if(page.equals("loadSet")){
+  else if (page.equals("loadSet")){
     cardSets();
   }
 }
