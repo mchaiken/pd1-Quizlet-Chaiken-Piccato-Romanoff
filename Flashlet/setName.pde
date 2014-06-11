@@ -4,6 +4,6 @@ boolean keybeenReleased=true;
 
 void setName() {   
   while( flash_card_set_name == null || flash_card_set_name.equals(""))
-    flash_card_set_name = showInputDialog("Name your flashcard Set");
+    flash_card_set_name = showInputDialog("Please enter a name for this set:");
 }
 
