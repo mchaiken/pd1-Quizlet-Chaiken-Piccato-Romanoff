@@ -1,5 +1,7 @@
 
 import gifAnimation.*;
+import java.util.*;
+import java.io.*;
 String page="loading";
 PFont f; 
 String fT;
@@ -38,6 +40,9 @@ void draw() {
   
   else if(page.equals("loading")){
     loadingPage(fT);
+  }
+  else if(page.equals("loadSet")){
+    cardSets();
   }
 }
 

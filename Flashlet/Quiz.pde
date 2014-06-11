@@ -1,6 +1,11 @@
+<<<<<<< HEAD:Flashlet/Quiz.pde
 Queue queue;
 PFont font;
 PImage cards;
+=======
+/*Queue queue;
+PImage img;
+>>>>>>> e50fe098d0d3b0516136308f15018ab17db560c8:Flashlet/LoadSet.pde
 boolean defDisplayed;
 Flashcard currentCard;
 class Quiz {
@@ -64,7 +69,11 @@ Quiz(String setName) {
    textAlign(CENTER);
    text(currentCard.getDef(), 350, 460);  
  }
+<<<<<<< HEAD:Flashlet/Quiz.pde
 }
+=======
+   */
+>>>>>>> e50fe098d0d3b0516136308f15018ab17db560c8:Flashlet/LoadSet.pde
  
 
 
