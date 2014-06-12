@@ -1,31 +1,25 @@
-import controlP5.*;
-import gifAnimation.*;
+import gifAnimation.*; 
 import java.util.*;
 import java.io.*;
+
 String page = "loading";
-String quizName="";
-Quiz currentQuiz;
-Quiz currentLearn;
 PFont font; 
 String fT;
 double time=millis();
-Gif nonLoopingGif;
-Gif load;
-ControlP5 cp5;
+Gif nonLoopingGif, load;
 
 void setup() {
   size(700, 600);
   background(188, 210, 238);
-  time=millis();
+  time = millis();
   nonLoopingGif = new Gif(this, "loading.gif");
   nonLoopingGif.play();
-  fT="home";
-  font=loadFont("Baskerville-SemiBold-48.vlw");
-  currentQuiz = null;
-  cp5= new ControlP5(this);
+  fT = "home";
+  font = loadFont("Baskerville-SemiBold-48.vlw");
 }
 
 void draw() {
+
   if (page.equals("home")) {
     homePage();
   } else if (page.equals("setName")) {
@@ -34,17 +28,12 @@ void draw() {
     newSet();
   } else if (page.equals("createSet")) {
     newSet();
-  } else if (page.equals("loading")) {
+  }
+  else if (page.equals("loading")){
     loadingPage(fT);
-  } else if (page.equals("loadSet")) {
+  }
+  else if (page.equals("loadSet")){
     cardSets();
   }
-  else if(page.equals("quiz")){
-    
-  }
-  else if(page.equals("learn")){
-    currentLearn.draw();
-  }
-    
 }
 

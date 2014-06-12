@@ -1,8 +1,7 @@
-
-
 class Button {
   
   String displaytext, functiontext, size;
+  String setName = "";
   int xcor, ycor, w, h, fsize, xoff, yoff;
 
   Button(String t, String f, String s, int x, int y) {
