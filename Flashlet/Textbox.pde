@@ -5,7 +5,6 @@ public class TextBox {
   color outline;
   boolean selected = false;
   boolean shift = false;
-  int index;
  
   TextBox(float x, float y) {
     xCor = x;
@@ -58,8 +57,8 @@ public class TextBox {
       changeSelected();
     }
   }
+  
   void keyPressed() {
-    println(text);
     keybeenReleased=false;
     if (key == CODED && keyCode == SHIFT) {
       shift = true;
@@ -73,11 +72,10 @@ public class TextBox {
         drawBox(color(0));
       } else {
         if (shift) {
-          updateText(((key + "").toUpperCase() + ""));
+          updateText(((key + "").toUpperCase() + ""), 0);
         } else {
-          updateText(key + "");
+          updateText(key + "", 0);
         }
-        index++;
       }
     }
   }
@@ -112,8 +110,8 @@ public class TextBox {
     fill(32, 69, 75);
   }
 
-  void updateText(String s) {
-    text += s;
+  void updateText(String s, int n) {
+    text = text.substring(0, n) + s + text.substring(n);
     PFont font = loadFont("Baskerville-SemiBold-48.vlw");
     textFont(font, 25);
     text(text, xCor + 5, yCor + boxHeight - 10);
