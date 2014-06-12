@@ -2,7 +2,7 @@ import gifAnimation.*;
 ArrayList <CardSet> sets = new ArrayList<CardSet>();
 void loadingPage(String functiontext) {
 
-  if (millis() < time+2000) {
+  if (millis() < time+20) {
     image(nonLoopingGif, width/2 - nonLoopingGif.width/2, height / 2 - nonLoopingGif.height / 2);
   } else {
     background(188, 210, 238);    
