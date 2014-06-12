@@ -3,6 +3,8 @@ Button lSet= new Button("Load Set", "loadSet", "large", 355, 350);
 
 PImage img;
 void homePage() {
+  clear();
+  background(188, 210, 238);
   img = loadImage("Flashlet.jpg");
   image(img, 0, 0);
   lSet.draw(); 

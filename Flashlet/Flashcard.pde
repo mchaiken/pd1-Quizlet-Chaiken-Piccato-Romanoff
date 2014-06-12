@@ -1,7 +1,7 @@
  class Flashcard {
  String term = "";
- String definition = 
- boolean definitionRevealed;
+ String definition;
+ boolean isRevealed;
  Flashcard next = null;
 
  Flashcard(String t, String d) {

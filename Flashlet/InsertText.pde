@@ -59,8 +59,7 @@ void mousePressed() {
       boxPressed = -1;
       index = -1;
       tb[boxOver].drawBox(color(0));
-    } 
-    else {
+    } else {
       if (boxPressed != -1) {
         tb[boxPressed].drawBox(color(0));
       }
@@ -72,42 +71,26 @@ void mousePressed() {
 }
 
 void keyPressed() {
-<<<<<<< HEAD
   println(index);
-  if (key == CODED) {
-    if (keyCode == SHIFT) {
-      shift = true;
-    }
-    else if (keyCode == LEFT & index > 0) {
-      index--;
-    }
-    else if (keyCode == RIGHT & index < tb[boxPressed].getText().length()) {
-      index++;
-    }
-  }
-  else if (boxPressed != -1) {
-    if ((key == BACKSPACE || key == DELETE) && index > 0) {
-=======
+
   if (page == "quiz" && keyCode == 32) {
-     if (!defDisplayed) {
-       currentQuiz.revealDefinition();
-       
-     }
-     else {
+    if (!defDisplayed) {
+      currentQuiz.revealDefinition();
+    } else {
       currentCard = queue.dequeue();
       if (currentCard != null) {
-       currentQuiz.newFlashcard();
+        currentQuiz.newFlashcard();
       }
-     }
-    defDisplayed = !defDisplayed; 
+    }
+    defDisplayed = !defDisplayed;
   }
-  if(page == "learn" && keyCode == 32 ){
+  if (page == "learn" && keyCode == 10) {
+    println("key");
     currentLearn.checkAnswer();
-  else if (key == CODED && keyCode == SHIFT) {
+  } else if (key == CODED && keyCode == SHIFT) {
     shift = true;
   } else if (boxPressed != -1) {
     if (key == BACKSPACE || key == DELETE) {
->>>>>>> 187849ed2400393f4289cc806451f06affaa2975
       tb[boxPressed].backSpace();
       index--;
     } else if (key == TAB && boxPressed < tb.length - 1) {
@@ -125,9 +108,10 @@ void keyPressed() {
       }
       index++;
     }
-  }
+  
   tb[boxPressed].drawBox();
   println(tb[boxPressed].getText());
+  }
 }
 
 void keyReleased() {
