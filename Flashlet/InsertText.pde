@@ -72,6 +72,7 @@ void mousePressed() {
 }
 
 void keyPressed() {
+<<<<<<< HEAD
   println(index);
   if (key == CODED) {
     if (keyCode == SHIFT) {
@@ -86,6 +87,25 @@ void keyPressed() {
   }
   else if (boxPressed != -1) {
     if ((key == BACKSPACE || key == DELETE) && index > 0) {
+=======
+  if (page == "quiz" && keyCode == 32) {
+     if (!defDisplayed) {
+       currentQuiz.revealDefinition();
+       
+     }
+     else {
+      currentCard = queue.dequeue();
+      if (currentCard != null) {
+       currentQuiz.newFlashcard();
+      }
+     }
+    defDisplayed = !defDisplayed; 
+   }
+  else if (key == CODED && keyCode == SHIFT) {
+    shift = true;
+  } else if (boxPressed != -1) {
+    if (key == BACKSPACE || key == DELETE) {
+>>>>>>> 187849ed2400393f4289cc806451f06affaa2975
       tb[boxPressed].backSpace();
       index--;
     } else if (key == TAB && boxPressed < tb.length - 1) {

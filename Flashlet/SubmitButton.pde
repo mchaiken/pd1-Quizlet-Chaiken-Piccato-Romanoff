@@ -7,14 +7,12 @@ class  SubmitButton extends Button{
    void mouseClicked(){
      if (hovered()){
        String ret = "";
-       println(flash_card_set_name);
        PrintWriter out = createWriter("cardSets/"+flash_card_set_name+".txt");
        for (int x = 0; x < tb.length / 2; x++) {
          out.println(tb[x * 2].getText() + " " + tb[x * 2 + 1].getText());
        }
        
        out.close();
-       println("written");
        setup();
        page="home";
          

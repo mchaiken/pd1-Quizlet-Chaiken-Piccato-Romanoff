@@ -2,7 +2,7 @@ import gifAnimation.*;
 
 void loadingPage(String functiontext) {
   
-  if (millis() < 0 /* time + 3000 */){
+  if (millis() < time + 3000){
     image(nonLoopingGif, width/2 - nonLoopingGif.width/2, height / 2 - nonLoopingGif.height / 2);
   }
   
