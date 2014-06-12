@@ -1,7 +1,7 @@
-/*class Learn {
+class Learn {
   Learn(String setName) {
     queue = new Queue();
-    String[] data = loadStrings(setName + ".txt");
+    String[] data = loadStrings("cardSets/" +setName + ".txt");
     for (String d : data) {
       int space = d.indexOf(" ");
       String term = d.substring(0, space);
@@ -11,6 +11,10 @@
     }
     size(700, 600); 
     background(188, 210, 238);
+    cp5.addTextfield("definition").setPosition(250, 400).setSize(200,40).
+    setFocus(true)
+    .setColor(color(255,255,255)).setFont(font2);
+    defDisplayed = false;
     cards = loadImage("Cards.jpg");
     image(cards, 0, 0);
 
@@ -20,10 +24,17 @@
     textAlign(CENTER);
     text(currentCard.getTerm(), 350, 160);
 
-    defDisplayed = false;
   }
-  
-  void keyPressed(){
-    if(key == 32){
-      if
-      */
+  void checkAnswer(){
+    if (cp5.getText().equals(currentCard.getDef())){
+      revealDefiniton();
+      
+    }
+    
+  void revealDefinition() {
+    fill(0);
+    textFont(font, 30);
+    textAlign(CENTER);
+    text(currentCard.getDef(), 350, 500);
+  }
+}

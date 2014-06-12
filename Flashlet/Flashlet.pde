@@ -5,8 +5,9 @@ import java.io.*;
 String page = "loading";
 String quizName="";
 Quiz currentQuiz;
-Quiz currentLearn;
+Learn currentLearn;
 PFont font; 
+PFont font2;
 String fT;
 double time=millis();
 Gif nonLoopingGif;
@@ -21,6 +22,7 @@ void setup() {
   nonLoopingGif.play();
   fT="home";
   font=loadFont("Baskerville-SemiBold-48.vlw");
+  font2=createFont("Baskerville-SemiBold-48.vlw",15);
   currentQuiz = null;
   cp5= new ControlP5(this);
 }
@@ -43,7 +45,6 @@ void draw() {
     
   }
   else if(page.equals("learn")){
-    currentLearn.draw();
   }
     
 }

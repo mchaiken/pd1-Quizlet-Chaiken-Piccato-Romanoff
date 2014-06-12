@@ -18,10 +18,11 @@ void loadingPage(String functiontext) {
     }
     if (functiontext.equals("loadSet")) {
       File folder = new File("pd1-Quizlet-Chaiken-Piccato-Romanoff/Flashlet/cardSets");
-
+      draw=true;
       File[] listOfFiles = folder.listFiles();
       text("Select a Set to Study:",30,30);
       int x=0;
+      t2=millis();
       for (int i = 0; i < listOfFiles.length; i++) {
         if (listOfFiles[i].isFile()) {
           println(listOfFiles[i].getName());

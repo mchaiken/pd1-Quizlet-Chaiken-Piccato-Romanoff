@@ -52,6 +52,7 @@ void mouseClicked() {
       fT=functiontext;
      page="loading";
      background(188, 210, 238);
+     
     }
   }
 }

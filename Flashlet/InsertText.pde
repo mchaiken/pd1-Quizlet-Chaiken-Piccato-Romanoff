@@ -82,7 +82,9 @@ void keyPressed() {
       }
      }
     defDisplayed = !defDisplayed; 
-   }
+  }
+  if(page == "learn" && keyCode == 32 ){
+    currentLearn.checkAnswer();
   else if (key == CODED && keyCode == SHIFT) {
     shift = true;
   } else if (boxPressed != -1) {
