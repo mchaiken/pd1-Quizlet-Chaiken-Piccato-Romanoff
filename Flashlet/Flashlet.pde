@@ -1,4 +1,4 @@
-
+import controlP5.*;
 import gifAnimation.*;
 import java.util.*;
 import java.io.*;
@@ -11,6 +11,7 @@ String fT;
 double time=millis();
 Gif nonLoopingGif;
 Gif load;
+ControlP5 cp5;
 
 void setup() {
   size(700, 600);
@@ -21,6 +22,7 @@ void setup() {
   fT="home";
   font=loadFont("Baskerville-SemiBold-48.vlw");
   currentQuiz = null;
+  cp5= new ControlP5(this);
 }
 
 void draw() {
