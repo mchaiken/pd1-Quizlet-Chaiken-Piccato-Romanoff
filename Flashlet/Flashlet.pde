@@ -31,7 +31,7 @@ void setup() {
 }
 
 void draw() {
-  println(page);
+  //println(page);
   if (page.equals("home")) {
     homePage();
   } else if (page.equals("setName")) {

@@ -72,7 +72,6 @@ void mousePressed() {
 
 void keyPressed() {
   println(index);
-
   if (page == "quiz" && keyCode == 32) {
     if (!defDisplayed) {
       currentQuiz.revealDefinition();
@@ -87,19 +86,31 @@ void keyPressed() {
   if (page == "learn" && keyCode == 10) {
     println("key");
     currentLearn.checkAnswer();
-  } else if (key == CODED && keyCode == SHIFT) {
-    shift = true;
-  } else if (boxPressed != -1) {
+  }
+  else if (key == CODED) {
+    if (keyCode == SHIFT) {
+      shift = true;
+    }
+    else if (keyCode == LEFT & index > 0) {
+      index--;
+    }
+    else if (keyCode == RIGHT & index < tb[boxPressed].getText().length()) {
+      index++;
+    }
+  }
+    else if (boxPressed != -1) {
     if (key == BACKSPACE || key == DELETE) {
       tb[boxPressed].backSpace();
-      index--;
+      if (index > 0) { index--; }
     } else if (key == TAB && boxPressed < tb.length - 1) {
       tb[boxPressed].drawBox(color(0));
       boxPressed++;
       tb[boxPressed].drawBox(color(116, 226, 245));
+      index = 0;
     } else if ((key == TAB && boxPressed == tb.length - 1) || key == ENTER || key == ESC) {
       tb[boxPressed].drawBox(color(0));
       boxPressed = -1;
+      index = 0;
     } else {
       if (shift) {
         tb[boxPressed].updateText( ((key + "").toUpperCase() + ""), index );
