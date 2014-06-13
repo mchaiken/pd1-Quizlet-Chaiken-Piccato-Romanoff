@@ -1,5 +1,6 @@
 class Learn {
   Learn(String setName) {
+    println(page);
     set = setName;
     queue = new Queue();
     String[] data = loadStrings("cardSets/" +setName + ".txt");
@@ -12,9 +13,7 @@ class Learn {
     }
     size(700, 600); 
     background(188, 210, 238);
-    cp5.addTextfield("definition").setPosition(250, 400).setSize(200, 40).
-      setFocus(true)
-      .setColor(color(255, 255, 255)).setFont(font2);
+     cp5.get(Textfield.class, "definition").show();
     defDisplayed = false;
     cards = loadImage("Cards.jpg");
     image(cards, 0, 0);

@@ -39,13 +39,8 @@ public class CardSet {
 
     //quizName=displaytext;
     if (hovered ()) {
-      /*
-      background(188, 210, 238); 
-       page = "quiz";
-       currentQuiz = new Quiz(displaytext);
-       draw=false;
-       */
-      page="learn";
+      page="selectType";
+      quizName=displaytext;
       background(188, 210, 238);
       currentLearn=new Learn(displaytext);
       draw=false;

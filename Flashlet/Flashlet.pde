@@ -24,6 +24,10 @@ void setup() {
   font2=createFont("Baskerville-SemiBold-48.vlw",15);
   currentQuiz = null;
   cp5= new ControlP5(this);
+  cp5.addTextfield("definition").setPosition(250, 400).setSize(200, 40).
+      setFocus(true)
+      .setColor(color(255, 255, 255)).setFont(font2);
+ cp5.get(Textfield.class, "definition").hide();
 }
 
 void draw() {
@@ -42,10 +46,16 @@ void draw() {
   }
 
   else if(page.equals("learn")){
-    home.draw();
+    currentLearn = new Learn(quizName);
+  }
+  else if(page.equals("quiz")){
+    currentQuiz = new Quiz(quizName);
   }
   else if (page.equals("loadSet")){
     cardSets();
+  }
+  else if (page.equals("selectType")){
+    selectQuizType();
   }
 }
 
