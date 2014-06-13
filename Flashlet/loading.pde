@@ -36,8 +36,11 @@ void loadingPage(String functiontext) {
       println("hide");
       cp5.get(Textfield.class, "definition").hide();
       textAlign(LEFT);
+    } else if (functiontext.equals("learn")) {
+      currentLearn = new Learn(quizName);
+    } else if (functiontext.equals("quiz")) {
+      currentQuiz = new Quiz(quizName);
     }
-    //else if functionte
 
     page=functiontext;
   }

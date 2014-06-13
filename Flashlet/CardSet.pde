@@ -36,13 +36,11 @@ public class CardSet {
     }
   }
   void mouseClicked() {
-
     //quizName=displaytext;
     if (hovered ()) {
       page="selectType";
       quizName=displaytext;
       background(188, 210, 238);
-      currentLearn=new Learn(displaytext);
       draw=false;
     }
   }

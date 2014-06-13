@@ -31,7 +31,7 @@ void setup() {
 }
 
 void draw() {
-
+  println(page);
   if (page.equals("home")) {
     homePage();
   } else if (page.equals("setName")) {
@@ -46,10 +46,11 @@ void draw() {
   }
 
   else if(page.equals("learn")){
-    currentLearn = new Learn(quizName);
+    home.draw();
   }
   else if(page.equals("quiz")){
-    currentQuiz = new Quiz(quizName);
+    home.draw();
+ 
   }
   else if (page.equals("loadSet")){
     cardSets();
