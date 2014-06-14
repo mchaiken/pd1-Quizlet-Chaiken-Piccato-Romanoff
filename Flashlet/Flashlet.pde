@@ -12,7 +12,7 @@ double time=millis();
 Gif nonLoopingGif;
 Gif load;
 ControlP5 cp5;
-
+Controller controller;
 void setup() {
   size(700, 600);
   background(188, 210, 238);
@@ -38,11 +38,7 @@ void draw() {
     loadingPage(fT);
   } else if (page.equals("loadSet")) {
     cardSets();
-  }
-  else if(page.equals("quiz")){
-    
-  }
-  else if(page.equals("learn")){
+  } else if(page.equals("learn")){
     currentLearn.draw();
   }
     
