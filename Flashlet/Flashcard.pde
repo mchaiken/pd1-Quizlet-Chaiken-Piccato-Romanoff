@@ -1,6 +1,7 @@
  class Flashcard {
  String term = "";
- String definition = "";
+ String definition;
+ boolean isRevealed;
  Flashcard next = null;
 
  Flashcard(String t, String d) {
