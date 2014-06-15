@@ -1,7 +1,7 @@
 TextBox[] tb;
 int boxOver = -1;
 int boxPressed = -1;
-
+int index=0;
 myButton home=new myButton("Back", "home", "small", 100, 20);
 SubmitButton submit=new SubmitButton("Submit", "submit", "small", 350, 570);
 boolean shift = false;
@@ -59,55 +59,28 @@ void mousePressed() {
     if (boxOver == boxPressed) {
       boxPressed = -1;
       tb[boxOver].drawBox(color(0));
+  
     } else {
       if (boxPressed != -1) {
         tb[boxPressed].drawBox(color(0));
       }
       boxPressed = boxOver;
       tb[boxOver].drawBox(color(116, 226, 245));
+          index=0;
     }
   }
 }
 
 void keyPressed() {
   if (page == "quiz" && keyCode == 32) {
-<<<<<<< HEAD
      if (!defDisplayed) {
        currentQuiz.revealDefinition();
      }
      else {
-=======
-    if (!defDisplayed) {
-      currentQuiz.revealDefinition();
-    } else {
->>>>>>> 337edc0ec1d6233b61be7445a91acb6895852f1c
       currentCard = queue.dequeue();
       if (currentCard != null) {
        currentQuiz.newFlashcard();
       }
-<<<<<<< HEAD
-     }
-    defDisplayed = !defDisplayed; 
-   }
-  else if (key == CODED && keyCode == SHIFT) {
-    shift = true;
-  } else if (boxPressed != -1) {
-    if (key == BACKSPACE || key == DELETE) {
-      tb[boxPressed].backSpace();
-    } else if (key == TAB && boxPressed < tb.length - 1) {
-      tb[boxPressed].drawBox(color(0));
-      boxPressed++;
-      tb[boxPressed].drawBox(color(116, 226, 245));
-    } else if ((key == TAB && boxPressed == tb.length - 1) || key == ENTER || key == ESC) {
-      tb[boxPressed].drawBox(color(0));
-      boxPressed = -1;
-    } else {
-      if (shift) {
-        tb[boxPressed].updateText(((key + "").toUpperCase() + ""));
-      } else {
-        tb[boxPressed].updateText(key + "");
-      }
-=======
     }
     defDisplayed = !defDisplayed;
   } else if (page == "learn" && keyCode == 10) {
@@ -148,7 +121,6 @@ void keyPressed() {
 
       tb[boxPressed].drawBox();
     }
->>>>>>> 337edc0ec1d6233b61be7445a91acb6895852f1c
     }
   }
 

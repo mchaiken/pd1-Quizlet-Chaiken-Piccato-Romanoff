@@ -1,4 +1,4 @@
-class Button {
+/*class Button {
   
   String displaytext, functiontext, size;
   String setName = "";
@@ -54,5 +54,5 @@ void mouseClicked() {
      
     }
   }
-}
+}*/
 

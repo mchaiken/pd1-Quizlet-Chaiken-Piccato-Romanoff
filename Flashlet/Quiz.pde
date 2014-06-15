@@ -31,7 +31,7 @@ class Quiz {
     tintedStar.filter(GRAY);
     tintedStar.resize(60, 50);
     
-    star = cp5.addButton("star").setImage(tintedStar).setSwitch(true).setPosition(170, 50);
+    
     
     textFont(font, 30);
     textAlign(CENTER);
@@ -45,7 +45,7 @@ class Quiz {
     textAlign(CENTER);
     text(currentCard.getTerm(), 350, 162);
     
-
+    star.show();
     defDisplayed = false;
   }
 

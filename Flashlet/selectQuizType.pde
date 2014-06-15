@@ -1,5 +1,5 @@
-Button learn= new Button("Learn", "learn", "large", 355, 250);
-Button quiz= new Button("Quiz", "quiz", "large", 355, 350);
+myButton learn= new myButton("Learn", "learn", "large", 355, 250);
+myButton quiz= new myButton("Quiz", "quiz", "large", 355, 350);
 
 void selectQuizType(){
     background(188, 210, 238);

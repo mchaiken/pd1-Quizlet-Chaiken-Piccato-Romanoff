@@ -1,5 +1,3 @@
-
-
 class myButton {
   
   String displaytext, functiontext, size;
