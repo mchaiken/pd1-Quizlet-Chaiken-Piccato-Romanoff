@@ -1,14 +1,14 @@
 TextBox[] tb;
 int boxOver = -1;
 int boxPressed = -1;
-int index = 0;
 
-Button home = new Button("Back", "home", "small", 100, 20);
-SubmitButton submit = new SubmitButton("Submit", "submit", "small", 350, 570);
+myButton home=new myButton("Back", "home", "small", 100, 20);
+SubmitButton submit=new SubmitButton("Submit", "submit", "small", 350, 570);
 boolean shift = false;
 
 void newSet() {
   update(mouseX, mouseY);
+  println(shift);
   for (TextBox b : tb) {
     b.updateText();
   }
@@ -26,6 +26,7 @@ void setupBoxes() {
     text(b.getText(), 100, 100);
   }
 } 
+
 
 void update(int mX, int mY) {
   if (mX >= tb[0].getX() && mX <= tb[0].getX() + tb[0].getW()) {
@@ -57,78 +58,49 @@ void mousePressed() {
   if (boxOver != -1) {
     if (boxOver == boxPressed) {
       boxPressed = -1;
-      index = -1;
       tb[boxOver].drawBox(color(0));
     } else {
       if (boxPressed != -1) {
         tb[boxPressed].drawBox(color(0));
       }
       boxPressed = boxOver;
-      index = tb[boxPressed].getText().length();
       tb[boxOver].drawBox(color(116, 226, 245));
     }
   }
 }
 
 void keyPressed() {
-  println(index);
   if (page == "quiz" && keyCode == 32) {
-<<<<<<< HEAD
      if (!defDisplayed) {
        currentQuiz.revealDefinition();
      }
      else {
-=======
-    if (!defDisplayed) {
-      currentQuiz.revealDefinition();
-    } else {
->>>>>>> 2f40823aebf7279b88af27a99536c298fbc0db45
       currentCard = queue.dequeue();
       if (currentCard != null) {
-        currentQuiz.newFlashcard();
+       currentQuiz.newFlashcard();
       }
-    }
-    defDisplayed = !defDisplayed;
-  }
-  if (page == "learn" && keyCode == 10) {
-    println("key");
-    currentLearn.checkAnswer();
-  }
-  else if (key == CODED) {
-    if (keyCode == SHIFT) {
-      shift = true;
-    }
-    else if (keyCode == LEFT & index > 0) {
-      index--;
-    }
-    else if (keyCode == RIGHT & index < tb[boxPressed].getText().length()) {
-      index++;
-    }
-  }
-    else if (boxPressed != -1) {
+     }
+    defDisplayed = !defDisplayed; 
+   }
+  else if (key == CODED && keyCode == SHIFT) {
+    shift = true;
+  } else if (boxPressed != -1) {
     if (key == BACKSPACE || key == DELETE) {
       tb[boxPressed].backSpace();
-      if (index > 0) { index--; }
     } else if (key == TAB && boxPressed < tb.length - 1) {
       tb[boxPressed].drawBox(color(0));
       boxPressed++;
       tb[boxPressed].drawBox(color(116, 226, 245));
-      index = 0;
     } else if ((key == TAB && boxPressed == tb.length - 1) || key == ENTER || key == ESC) {
       tb[boxPressed].drawBox(color(0));
       boxPressed = -1;
-      index = 0;
     } else {
       if (shift) {
-        tb[boxPressed].updateText( ((key + "").toUpperCase() + ""), index );
+        tb[boxPressed].updateText(((key + "").toUpperCase() + ""));
       } else {
-        tb[boxPressed].updateText(key + "", index);
+        tb[boxPressed].updateText(key + "");
       }
-      index++;
     }
-  
-  tb[boxPressed].drawBox();
-  println(tb[boxPressed].getText());
   }
 }
 

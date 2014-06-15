@@ -1,5 +1,5 @@
 
-PImage cards, starImg;
+PImage cards, starImg, tintedStar ;
 Queue queue, starred;
 boolean defDisplayed;
 Flashcard currentCard;
@@ -25,9 +25,14 @@ class Quiz {
     image(cards, 0, 0);
 
     starImg = loadImage("star.jpg");
-    starImg.resize(60,50);
+    starImg.resize(60, 50);
+        
+    tintedStar = starImg;
+    tintedStar.filter(GRAY);
+    tintedStar.resize(60, 50);
     
-    cp5.addButton("star").setImage(starImg).setPosition(170, 50);
+    star = cp5.addButton("star").setImage(tintedStar).setSwitch(true).setPosition(170, 50);
+    
     textFont(font, 30);
     textAlign(CENTER);
     fill(80);
@@ -45,13 +50,17 @@ class Quiz {
   }
 
   void draw() {
+    if (star.isPressed()) {
+      star.setImage(starImg);
+    }
   }
 
   void keyPressed() {
   }
 
   void newFlashcard() {
-    //image(cards, 0, 0);
+    
+    image(cards, 0, 0);
 
     textFont(font, 30);
     textAlign(CENTER);

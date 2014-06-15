@@ -1,11 +1,10 @@
-
-
-class myButton {
+class Button {
   
   String displaytext, functiontext, size;
+  String setName = "";
   int xcor, ycor, w, h, fsize, xoff, yoff;
 
-  myButton(String t, String f, String s, int x, int y) {
+  Button(String t, String f, String s, int x, int y) {
     displaytext = t;
     functiontext = f;
     size = s;
@@ -52,6 +51,7 @@ void mouseClicked() {
       fT=functiontext;
      page="loading";
      background(188, 210, 238);
+     
     }
   }
 }
