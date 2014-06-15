@@ -1,6 +1,6 @@
 
 PImage cards, starImg ;
-Queue queue, starred;
+Queue queue;
 boolean defDisplayed;
 Flashcard currentCard;
 String set;
@@ -12,12 +12,14 @@ class Quiz {
     set = setName;
     queue = new Queue();
     String[] data = loadStrings("cardSets/" + set + ".txt");
+    
     for (String d : data) {
       int space = d.indexOf(" ");
       String term = d.substring(0, space);
       String definition = d.substring(space+1);
       Flashcard f = new Flashcard(term, definition);
       queue.enqueue(f);
+    
     }
     
     size(700, 600); 
@@ -39,19 +41,23 @@ class Quiz {
     
     defDisplayed = false;
     
-    cp5.get("starCard").show();
+    cp5.get("star").show();
   }
   
   void draw() {
   }
 
   void addCard() {
-    currentCard.star();
-    print("YES");
+    queue.enqueue(currentCard);
   }
 
   void newFlashcard() {
-    cp5.get("starCard").show();
+    cp5.get("star").show();
+    cp5.get("unstar").hide();
+    print(currentCard.starred);
+    if (!currentCard.starred) {
+      cp5.get("star").show();
+    }
     image(cards, 0, 0);
 
     textFont(font, 30);
@@ -67,6 +73,8 @@ class Quiz {
   }
 
   void revealDefinition() {
+    
+    print(currentCard.starred);
     fill(0);
     textFont(font, 30);
     textAlign(CENTER);

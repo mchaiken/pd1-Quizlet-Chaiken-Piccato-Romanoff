@@ -77,6 +77,9 @@ void keyPressed() {
        currentQuiz.revealDefinition();
      }
      else {
+       if (currentCard.starred) {
+         queue.enqueue(currentCard);
+       }
       currentCard = queue.dequeue();
       if (currentCard != null) {
        currentQuiz.newFlashcard();
@@ -85,7 +88,6 @@ void keyPressed() {
     defDisplayed = !defDisplayed;
   } else if (page == "learn" && keyCode == 10) {
     println("key");
-    //currentLearn.checkAnswer();
   } else if (page == "newSet") {
      if (key == CODED) {
       if (keyCode == SHIFT) {

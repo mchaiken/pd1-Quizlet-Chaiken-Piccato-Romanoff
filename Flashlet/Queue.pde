@@ -33,6 +33,7 @@ class Queue {
   String toString() {
     String s = "";
     Flashcard temp = head;
+    while (temp != null)
     {
       s += temp.toString() + "\n";
       temp = temp.next();

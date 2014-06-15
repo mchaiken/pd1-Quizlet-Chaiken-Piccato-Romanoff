@@ -37,7 +37,6 @@ public class CardSet {
   void mouseClicked() {
     if (hovered ()) {
       background(188, 210, 238); 
-      print(displaytext);
       quizName = displaytext;
       currentQuiz = new Quiz(quizName);
       page = "quiz";

@@ -35,7 +35,7 @@ void loadingPage(String functiontext) {
     } else if (functiontext.equals("home")) {
       println("hide");
       cp5.get(Textfield.class, "definition").hide();
-      cp5.get("starCard").hide();
+      cp5.get("star").hide();
       textAlign(LEFT);
     } else if (functiontext.equals("learn")) {
       currentLearn = new Learn(quizName);
