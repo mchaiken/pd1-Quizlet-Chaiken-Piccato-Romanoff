@@ -3,6 +3,7 @@
  String definition = "";
  Flashcard next = null;
  boolean starred;
+ boolean isRevealed=false;
  Flashcard(String t, String d) {
   term = t;
   definition = d; 
@@ -25,6 +26,7 @@
  }
  
  String getDef() {
+  isRevealed=true;
   return definition; 
  }
  Flashcard next() {

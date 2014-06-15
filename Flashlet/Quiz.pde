@@ -24,18 +24,6 @@ class Quiz {
     background(188, 210, 238);
     cards = loadImage("Cards.jpg");
     image(cards, 0, 0);
-
-<<<<<<< HEAD
-    starImg = loadImage("star.jpg");
-    starImg.resize(60, 50);
-        
-    tintedStar = starImg;
-    tintedStar.filter(GRAY);
-    tintedStar.resize(60, 50);
-    
-    
-=======
->>>>>>> FETCH_HEAD
     
     textFont(font, 30);
     textAlign(CENTER);
@@ -49,7 +37,6 @@ class Quiz {
     textAlign(CENTER);
     text(currentCard.getTerm(), 350, 162);
     
-    star.show();
     defDisplayed = false;
     
     cp5.get("starCard").show();
