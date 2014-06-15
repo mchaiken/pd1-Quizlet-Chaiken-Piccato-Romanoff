@@ -36,10 +36,27 @@ void draw() {
     newSet();
   } else if (page.equals("loading")) {
     loadingPage(fT);
+<<<<<<< HEAD
   } else if (page.equals("loadSet")) {
     cardSets();
   } else if(page.equals("learn")){
     currentLearn.draw();
+=======
+  }
+
+  else if(page.equals("learn")){
+    home.draw();
+  }
+  else if(page.equals("quiz")){
+    home.draw();
+ 
+  }
+  else if (page.equals("loadSet")){
+    cardSets();
+  }
+  else if (page.equals("selectType")){
+    selectQuizType();
+>>>>>>> 337edc0ec1d6233b61be7445a91acb6895852f1c
   }
     
 }

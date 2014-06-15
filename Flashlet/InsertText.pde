@@ -71,14 +71,21 @@ void mousePressed() {
 
 void keyPressed() {
   if (page == "quiz" && keyCode == 32) {
+<<<<<<< HEAD
      if (!defDisplayed) {
        currentQuiz.revealDefinition();
      }
      else {
+=======
+    if (!defDisplayed) {
+      currentQuiz.revealDefinition();
+    } else {
+>>>>>>> 337edc0ec1d6233b61be7445a91acb6895852f1c
       currentCard = queue.dequeue();
       if (currentCard != null) {
        currentQuiz.newFlashcard();
       }
+<<<<<<< HEAD
      }
     defDisplayed = !defDisplayed; 
    }
@@ -100,14 +107,55 @@ void keyPressed() {
       } else {
         tb[boxPressed].updateText(key + "");
       }
+=======
+    }
+    defDisplayed = !defDisplayed;
+  } else if (page == "learn" && keyCode == 10) {
+    println("key");
+    currentLearn.checkAnswer();
+  } else if (page == "newSet") {
+     if (key == CODED) {
+      if (keyCode == SHIFT) {
+        shift = true;
+      } else if (keyCode == LEFT & index > 0) {
+        index--;
+      } else if (keyCode == RIGHT & index < tb[boxPressed].getText().length()) {
+        index++;
+      }
+    } else if (boxPressed != -1) {
+      if (key == BACKSPACE || key == DELETE) {
+        tb[boxPressed].backSpace();
+        if (index > 0) { 
+          index--;
+        }
+      } else if (key == TAB && boxPressed < tb.length - 1) {
+        tb[boxPressed].drawBox(color(0));
+        boxPressed++;
+        tb[boxPressed].drawBox(color(116, 226, 245));
+        index = 0;
+      } else if ((key == TAB && boxPressed == tb.length - 1) || key == ENTER || key == ESC) {
+        tb[boxPressed].drawBox(color(0));
+        boxPressed = -1;
+        index = 0;
+      } else {
+        if (shift) {
+          tb[boxPressed].updateText( ((key + "").toUpperCase() + ""), index );
+        } else {
+          tb[boxPressed].updateText(key + "", index);
+        }
+        index++;
+      }
+
+      tb[boxPressed].drawBox();
+    }
+>>>>>>> 337edc0ec1d6233b61be7445a91acb6895852f1c
     }
   }
-}
 
-void keyReleased() {
-  keybeenReleased=true;
-  if (key == CODED && keyCode == SHIFT) {
-    shift = false;
+  void keyReleased() {
+    keybeenReleased=true;
+    if (key == CODED && keyCode == SHIFT) {
+      shift = false;
+    }
   }
-}
 
