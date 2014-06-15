@@ -43,12 +43,6 @@ void draw() {
   }
   else if (page.equals("loading")){
     loadingPage(fT);
-<<<<<<< HEAD
-  } else if (page.equals("loadSet")) {
-    cardSets();
-  } else if(page.equals("learn")){
-    currentLearn.draw();
-=======
   }
 
   else if(page.equals("learn")){
@@ -63,7 +57,6 @@ void draw() {
   }
   else if (page.equals("selectType")){
     selectQuizType();
->>>>>>> 2f40823aebf7279b88af27a99536c298fbc0db45
   }
 }
 
