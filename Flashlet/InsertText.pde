@@ -85,7 +85,7 @@ void keyPressed() {
     defDisplayed = !defDisplayed;
   } else if (page == "learn" && keyCode == 10) {
     println("key");
-    currentLearn.checkAnswer();
+    //currentLearn.checkAnswer();
   } else if (page == "newSet") {
      if (key == CODED) {
       if (keyCode == SHIFT) {

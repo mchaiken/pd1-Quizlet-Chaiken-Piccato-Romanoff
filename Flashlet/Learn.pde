@@ -24,6 +24,7 @@ class Learn {
     textAlign(CENTER);
     text(currentCard.getTerm(), 350, 160);
   }
+  
   void checkAnswer() {
     println("check");
     println(cp5.get(Textfield.class, "definition").getText());

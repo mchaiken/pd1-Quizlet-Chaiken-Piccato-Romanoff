@@ -1,13 +1,14 @@
 
-PImage cards, starImg, tintedStar ;
+PImage cards, starImg ;
 Queue queue, starred;
 boolean defDisplayed;
 Flashcard currentCard;
 String set;
-Button star;
 
 class Quiz {
+  
   Quiz(String setName) {
+
     set = setName;
     queue = new Queue();
     String[] data = loadStrings("cardSets/" + set + ".txt");
@@ -24,6 +25,7 @@ class Quiz {
     cards = loadImage("Cards.jpg");
     image(cards, 0, 0);
 
+<<<<<<< HEAD
     starImg = loadImage("star.jpg");
     starImg.resize(60, 50);
         
@@ -32,6 +34,8 @@ class Quiz {
     tintedStar.resize(60, 50);
     
     
+=======
+>>>>>>> FETCH_HEAD
     
     textFont(font, 30);
     textAlign(CENTER);
@@ -47,19 +51,20 @@ class Quiz {
     
     star.show();
     defDisplayed = false;
+    
+    cp5.get("starCard").show();
   }
-
+  
   void draw() {
-    if (star.isPressed()) {
-      star.setImage(starImg);
-    }
   }
 
-  void keyPressed() {
+  void addCard() {
+    currentCard.star();
+    print("YES");
   }
 
   void newFlashcard() {
-    
+    cp5.get("starCard").show();
     image(cards, 0, 0);
 
     textFont(font, 30);
