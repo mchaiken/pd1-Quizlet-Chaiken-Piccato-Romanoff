@@ -12,7 +12,8 @@ double time=millis();
 Gif nonLoopingGif; 
 Gif load;
 ControlP5 cp5;
-Controller controller;
+PImage tintedStar;
+int index;
 void setup() {
   size(700, 600);
   background(188, 210, 238);
@@ -22,7 +23,15 @@ void setup() {
   fT="home";
   font=loadFont("Baskerville-SemiBold-48.vlw");
   currentQuiz = null;
-  cp5= new ControlP5(this);
+  cp5 = new ControlP5(this); 
+  
+  starImg = loadImage("star.jpg");
+  starImg.resize(60, 50);
+  
+  tintedStar = loadImage("star.jpg");
+  tintedStar.filter(GRAY);
+  tintedStar.resize(60, 50);
+  cp5.addButton("starCard").setImage(tintedStar).setPosition(170, 50).setSize(60,50).hide();
 }
 
 void draw() {
@@ -36,28 +45,17 @@ void draw() {
     newSet();
   } else if (page.equals("loading")) {
     loadingPage(fT);
-<<<<<<< HEAD
   } else if (page.equals("loadSet")) {
     cardSets();
+  } else if (page.equals("quiz")) {
+    currentQuiz.draw();
   } else if(page.equals("learn")){
     currentLearn.draw();
-=======
   }
-
-  else if(page.equals("learn")){
-    home.draw();
-  }
-  else if(page.equals("quiz")){
-    home.draw();
- 
-  }
-  else if (page.equals("loadSet")){
-    cardSets();
-  }
-  else if (page.equals("selectType")){
-    selectQuizType();
->>>>>>> 337edc0ec1d6233b61be7445a91acb6895852f1c
-  }
-    
 }
 
+void starCard(int theValue) {
+  image(starImg, 170, 50);
+  cp5.get("starCard").hide();
+  currentQuiz.addCard();
+}

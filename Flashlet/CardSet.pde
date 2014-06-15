@@ -1,5 +1,4 @@
 static boolean draw=true;
-double t2;
 public class CardSet {
   String displaytext, functiontext, size;
   int xcor, ycor, w, h, fsize, xoff, yoff;
@@ -13,7 +12,7 @@ public class CardSet {
     w = 675;
     h = 50;
     fsize = 25;
-    xoff = 100 ;
+    xoff =100 ;
     yoff = 40;
     draw=true;
   }
@@ -29,18 +28,19 @@ public class CardSet {
       fill(0);
       textFont(font, fsize);
       text(displaytext, xcor+xoff, ycor+yoff);
-
-      if (mousePressed && millis()>t2+200) {
+      if (mousePressed) {
         mouseClicked();
       }
     }
   }
+  
   void mouseClicked() {
-    //quizName=displaytext;
     if (hovered ()) {
-      page="selectType";
-      quizName=displaytext;
-      background(188, 210, 238);
+      background(188, 210, 238); 
+      print(displaytext);
+      quizName = displaytext;
+      currentQuiz = new Quiz(quizName);
+      page = "quiz";
       draw=false;
     }
   }

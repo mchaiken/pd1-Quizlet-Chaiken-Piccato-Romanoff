@@ -71,48 +71,19 @@ void mousePressed() {
 
 void keyPressed() {
   if (page == "quiz" && keyCode == 32) {
-<<<<<<< HEAD
      if (!defDisplayed) {
        currentQuiz.revealDefinition();
      }
      else {
-=======
-    if (!defDisplayed) {
-      currentQuiz.revealDefinition();
-    } else {
->>>>>>> 337edc0ec1d6233b61be7445a91acb6895852f1c
       currentCard = queue.dequeue();
       if (currentCard != null) {
        currentQuiz.newFlashcard();
       }
-<<<<<<< HEAD
-     }
-    defDisplayed = !defDisplayed; 
-   }
-  else if (key == CODED && keyCode == SHIFT) {
-    shift = true;
-  } else if (boxPressed != -1) {
-    if (key == BACKSPACE || key == DELETE) {
-      tb[boxPressed].backSpace();
-    } else if (key == TAB && boxPressed < tb.length - 1) {
-      tb[boxPressed].drawBox(color(0));
-      boxPressed++;
-      tb[boxPressed].drawBox(color(116, 226, 245));
-    } else if ((key == TAB && boxPressed == tb.length - 1) || key == ENTER || key == ESC) {
-      tb[boxPressed].drawBox(color(0));
-      boxPressed = -1;
-    } else {
-      if (shift) {
-        tb[boxPressed].updateText(((key + "").toUpperCase() + ""));
-      } else {
-        tb[boxPressed].updateText(key + "");
-      }
-=======
     }
     defDisplayed = !defDisplayed;
   } else if (page == "learn" && keyCode == 10) {
     println("key");
-    currentLearn.checkAnswer();
+    //currentLearn.checkAnswer();
   } else if (page == "newSet") {
      if (key == CODED) {
       if (keyCode == SHIFT) {
@@ -148,7 +119,6 @@ void keyPressed() {
 
       tb[boxPressed].drawBox();
     }
->>>>>>> 337edc0ec1d6233b61be7445a91acb6895852f1c
     }
   }
 
