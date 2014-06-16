@@ -1,7 +1,12 @@
 import gifAnimation.*;
 
 void loadingPage(String functiontext) {
-
+   if(cp5.get("definition").isVisible() && page != "learn"){
+     cp5.get("definition").hide();
+   }
+     if(cp5.get("star").isVisible() && page != "quiz"){
+     cp5.get("star").hide();
+   }
   if (millis() < time +3000 ) {
     image(nonLoopingGif, width/2 - nonLoopingGif.width/2, height / 2 - nonLoopingGif.height / 2);
   } else {
@@ -42,7 +47,6 @@ void loadingPage(String functiontext) {
     } else if (functiontext.equals("quiz")) {
       currentQuiz = new Quiz(quizName);
     }
-
     page=functiontext;
   }
 }

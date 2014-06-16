@@ -43,8 +43,8 @@ void setup() {
           .setFocus(true)
             .setColor(color(255, 0, 0));
   cp5.get("definition").hide();
-  cp5.addButton("star").setImage(tintedStar).setPosition(170, 50).setSize(60, 50).hide();
-  cp5.addButton("unstar").setImage(starImg).setPosition(170,50).setSize(60,50).hide();
+  cp5.addButton("star").setImage(tintedStar).setPosition(170, 56).setSize(60, 50).hide();
+  cp5.addButton("unstar").setImage(starImg).setPosition(170,55).setSize(60,50).hide();
 }
 
 void draw() {
@@ -81,5 +81,4 @@ void unstar(int theValue) {
   cp5.get("star").show();
   currentCard.star();
 }
- 
 

@@ -26,7 +26,6 @@
  }
  
  String getDef() {
-  isRevealed=true;
   return definition; 
  }
  Flashcard next() {
