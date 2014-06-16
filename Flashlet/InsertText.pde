@@ -93,6 +93,7 @@ void keyPressed() {
     }
   } else if (page == "learn" && keyCode == 10) {
     println("key");
+    currentLearn.checkAnswer();
   } else if (page == "newSet") {
      if (key == CODED) {
       if (keyCode == SHIFT) {

@@ -38,8 +38,7 @@ public class CardSet {
     if (hovered ()) {
       background(188, 210, 238); 
       quizName = displaytext;
-      currentQuiz = new Quiz(quizName);
-      page = "quiz";
+      page = "selectType";
       draw=false;
     }
   }

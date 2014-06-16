@@ -23,14 +23,25 @@ class Learn {
     textFont(font, 30);
     textAlign(CENTER);
     text(currentCard.getTerm(), 350, 160);
+    textFont(font,12);
+    text("Type in the word corresponding to the above card. If you don't know, simply leave the box blank and hit enter",350,50);
+    textFont(font, 30);
   }
   
   void checkAnswer() {
     println("check");
     println(cp5.get(Textfield.class, "definition").getText());
-    if ((cp5.get(Textfield.class, "definition").getText().equals(currentCard.getDef())|| cp5.get(Textfield.class, "definition").getText().equals("")) && !currentCard.isRevealed) {
+    
+    if (cp5.get(Textfield.class, "definition").getText().equals(currentCard.getDef()) && !currentCard.isRevealed) {
       revealDefinition();
-    } else if (currentCard.isRevealed) {
+    } 
+    else if(cp5.get(Textfield.class,"definition").getText().equals("") && !currentCard.isRevealed){
+      println("empty");
+      revealDefinition();
+      queue.enqueue(currentCard);
+    }
+    else if (currentCard.isRevealed) {
+      currentCard.isRevealed=false;
       currentCard = queue.dequeue();
       if (currentCard != null) {
         newFlashcard();
