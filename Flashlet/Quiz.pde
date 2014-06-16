@@ -37,13 +37,12 @@ class Quiz {
     fill(0);
     textFont(font, 30);
     textAlign(CENTER);
-    text(currentCard.getTerm(), 350, 162);
+    text(currentCard.getTerm(), 350, 158);
 
     defDisplayed = false;
 
     cp5.get("star").show();
   }
-<<<<<<< HEAD
   
   void exitQuiz() {
    showMessageDialog(null, "You have finished your quiz!");
@@ -51,11 +50,9 @@ class Quiz {
    cp5.get("unstar").hide();
    page = "home";
    homePage();
-=======
-
-  void draw() {
->>>>>>> 0d9ce8c5a5b51c4f2271cef848edaa32d3f081b6
+   
   }
+
   void addCard() {
     queue.enqueue(currentCard);
   }
@@ -77,7 +74,7 @@ class Quiz {
     fill(0);
     textFont(font, 30);
     textAlign(CENTER);
-    text(currentCard.getTerm(), 350, 162);
+    text(currentCard.getTerm(), 350, 158);
   }
 
   void revealDefinition() {
@@ -86,7 +83,7 @@ class Quiz {
     fill(0);
     textFont(font, 30);
     textAlign(CENTER);
-    text(currentCard.getDef(), 350, 462);
+    text(currentCard.getDef(), 350, 458);
   }
 }
 
