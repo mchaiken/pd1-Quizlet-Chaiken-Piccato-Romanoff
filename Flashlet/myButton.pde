@@ -1,10 +1,9 @@
-/*class Button {
+class myButton {
   
   String displaytext, functiontext, size;
-  String setName = "";
   int xcor, ycor, w, h, fsize, xoff, yoff;
 
-  Button(String t, String f, String s, int x, int y) {
+  myButton(String t, String f, String s, int x, int y) {
     displaytext = t;
     functiontext = f;
     size = s;
@@ -34,8 +33,9 @@
     }
     ellipse(xcor, ycor, w, h);
     fill(0);
+    textAlign(CENTER);
     textFont(font, fsize);
-    text(displaytext, xcor-xoff, ycor+yoff);
+    text(displaytext, xcor, ycor+yoff);
     if (mousePressed) {
       mouseClicked();
     }
@@ -51,8 +51,7 @@ void mouseClicked() {
       fT=functiontext;
      page="loading";
      background(188, 210, 238);
-     
     }
   }
-}*/
+}
 

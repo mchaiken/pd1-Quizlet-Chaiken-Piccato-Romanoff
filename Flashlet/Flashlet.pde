@@ -2,6 +2,8 @@ import controlP5.*;
 import gifAnimation.*;
 import java.util.*;
 import java.io.*;
+import static javax.swing.JOptionPane.*;
+import static javax.swing.JFrame.*;
 String page = "loading";
 String quizName="";
 Quiz currentQuiz;
@@ -36,6 +38,7 @@ void setup() {
   tintedStar = loadImage("star.jpg");
   tintedStar.filter(GRAY);
   tintedStar.resize(60, 50);
+  
   cp5.addTextfield("definition")
     .setPosition(250, 400)
       .setSize(200, 40)
@@ -61,7 +64,7 @@ void draw() {
   } else if (page.equals("learn")) {
     home.draw();
   } else if (page.equals("quiz")) {
-    home.draw();
+    //home.draw();
   } else if (page.equals("loadSet")) {
     cardSets();
   } else if (page.equals("selectType")) {

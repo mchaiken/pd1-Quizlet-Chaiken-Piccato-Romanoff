@@ -1,4 +1,3 @@
-
 PImage cards, starImg ;
 Queue queue;
 boolean defDisplayed;
@@ -44,9 +43,13 @@ class Quiz {
     cp5.get("star").show();
   }
   
-  void draw() {
+  void exitQuiz() {
+   showMessageDialog(null, "You have finished your quiz!");
+   cp5.get("star").hide();
+   cp5.get("unstar").hide();
+   page = "home";
+   homePage();
   }
-
   void addCard() {
     queue.enqueue(currentCard);
   }

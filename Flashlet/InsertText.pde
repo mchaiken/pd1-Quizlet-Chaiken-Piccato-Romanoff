@@ -73,7 +73,8 @@ void mousePressed() {
 
 void keyPressed() {
   if (page == "quiz" && keyCode == 32) {
-     if (!defDisplayed) {
+    if (currentCard != null) {
+    if (!defDisplayed) {
        currentQuiz.revealDefinition();
      }
      else {
@@ -84,8 +85,12 @@ void keyPressed() {
       if (currentCard != null) {
        currentQuiz.newFlashcard();
       }
+     }
+     defDisplayed = !defDisplayed;
     }
-    defDisplayed = !defDisplayed;
+    else {
+      currentQuiz.exitQuiz();
+    }
   } else if (page == "learn" && keyCode == 10) {
     println("key");
   } else if (page == "newSet") {
