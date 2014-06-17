@@ -77,7 +77,7 @@ void draw() {
   } else if (page.equals("learn")) {
     home.draw();
   } else if (page.equals("quiz")) {
-    //home.draw();
+    home.draw();
   } else if (page.equals("loadSet")) {
     cardSets();
   } else if (page.equals("selectType")) {
