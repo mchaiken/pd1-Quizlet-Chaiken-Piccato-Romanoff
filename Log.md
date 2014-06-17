@@ -1,6 +1,6 @@
-6/1/14- Miranda - Home Page, Buttons and Navigation
+6/1/14- Miranda - createdHome Page, set up Button class and created outline for overallNavigation
 
-6/2/14- Miranda- Submit Buttons and the beginnings of file writing
+6/2/14- Miranda- Submit Buttons and the beginnings of file writing for new sets
 
 6/2/14- Nick- accounting for tab / enter keys and more complete file writing
 
@@ -8,6 +8,12 @@
 
 6/3 - Aida - Added to LoadSet, completed enqueue and dequeue methods; flashcards can now be stored in a queue from the text file
 
-6/3 - Nick - capital letters and some improvements for efficiency 
+6/3 - Nick - capital letters and some improvements for efficiency
+
+6/3 - Miranda - Fought with Textboxes to make them more universally usuable and working on creating a page to enter the name of a new set
+
+6/4 - Miranda - Worked on file output so it appropriatedly writes to files with correct file names. Additionally added background images
+
+
 
 6/5 - Aida -In LoadSet folder, now able to display flashcards in a set and their definition.
