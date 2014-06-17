@@ -37,9 +37,9 @@
 
 6/14 - Nick - began working on createSet
 
-6/15 - Fixed issue with keyboard functionallity and other merge issues. Also set up Learn so that missed words are added back to the queue.
+6/15 - Miranda- Fixed issue with keyboard functionallity and other merge issues. Also set up Learn so that missed words are added back to the queue.
 
-6/15 - Finalizing star function, adding message at the end of quiz. 
+6/15 - Aida - Finalizing star function, adding message at the end of quiz. 
 
 6/15 - Nick - further improving createSet
 
