@@ -35,8 +35,14 @@
 
 6/14 - Aida - Added ControlP5 button stars to Quiz Game.
 
+6/14 - Nick - began working on createSet
+
 6/15 - Fixed issue with keyboard functionallity and other merge issues. Also set up Learn so that missed words are added back to the queue.
 
 6/15 - Finalizing star function, adding message at the end of quiz. 
 
+6/15 - Nick - further improving createSet
+
 6/16 - Finished star function, added ability to create account, log in, and pull up sets for a specific account. Added accounts folder. 
+
+6/16 - Nick - implementing createSet as replacement for insertText
