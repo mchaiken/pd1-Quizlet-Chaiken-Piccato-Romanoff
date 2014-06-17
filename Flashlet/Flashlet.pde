@@ -4,14 +4,13 @@ import java.util.*;
 import java.io.*;
 import static javax.swing.JOptionPane.*;
 import static javax.swing.JFrame.*;
-PrintWriter writer;
+
+PFont font, font2, font3, font4, font5;
+boolean setup = false;
 String page = "loading";
 String quizName="";
-String user="";
 Quiz currentQuiz;
 Learn currentLearn;
-PFont font; 
-PFont font2;
 String fT;
 double time=millis();
 Gif nonLoopingGif; 
@@ -20,20 +19,27 @@ ControlP5 cp5;
 double t2;
 Controller controller;
 PImage tintedStar;
+String[] boxNames = new String[12];
 
 void setup() {
+  
   size(700, 600);
   background(188, 210, 238);
   time=millis();
+  
+  cp5 = new ControlP5(this); 
 
-  writer = createWriter("accounts.txt");
   nonLoopingGif = new Gif(this, "loading.gif");
   nonLoopingGif.play();
-  fT="login";
+  fT="home";
   font=loadFont("Baskerville-SemiBold-48.vlw");
   font2=createFont("Baskerville-SemiBold-48.vlw", 20);
   currentQuiz = null;
-  cp5 = new ControlP5(this); 
+  
+  // fonts used in CreateSet
+  font3 = createFont("Futura-CondensedMedium", 24);
+  font4 = createFont("CenturyGothic-Bold", 36);
+  font5 = createFont("CenturyGothic-Bold", 30); 
 
   starImg = loadImage("star.jpg");
   starImg.resize(60, 50);
@@ -49,23 +55,40 @@ void setup() {
           .setFocus(true)
             .setColor(color(255, 0, 0));
   cp5.get("definition").hide();
+  println("!!!");
   cp5.addButton("star").setImage(tintedStar).setPosition(170, 56).setSize(60, 50).hide();
-  cp5.addButton("unstar").setImage(starImg).setPosition(170,55).setSize(60,50).hide();
+  cp5.addButton("unstar").setImage(starImg).setPosition(170,55).setSize(60,50).hide(); 
   
+  // creates and hides CP Functionality for CreateSet 
+  setupCPBoxes();
+  setupCPButtons();
+  
+  Queue test = new Queue();
+  Flashcard a = new Flashcard("A", "B");
+  Flashcard b = new Flashcard("B", "C");
+  a.setNext(b);
+  test.enqueue(a);
+
+  // saves the String names of the CPTextfields for easy iteration
+  for (int x = 0; x < 6; x++) {
+    boxNames[x] = "t" + x;
+    boxNames[x + 6] = "d" + x;
+  }
+  for (String s : boxNames) {
+    println(s);
+  }
+  setup = true;
 }
 
 void draw() {
-  if(page.equals("login")){
-    login();
-  }
-  else if (page.equals("home")) {
+  if (page.equals("home")) {
     homePage();
   } else if (page.equals("setName")) {
     setName();
   } else if (page.equals("newSet")) {
-    newSet();
+    updateCreateSet();
   } else if (page.equals("createSet")) {
-    newSet();
+    updateCreateSet();
   } else if (page.equals("loading")) {
     loadingPage(fT);
   } else if (page.equals("learn")) {
@@ -94,4 +117,61 @@ void unstar(int theValue) {
   
   
 }
+
+// activated in CreateSet
+void setupCPBoxes() {
+  for (int x = 0; x < 6; x++) {
+    termValues[x] = x + "";
+    defValues[x] = x + "";
+    String name = "t" + x;
+    cp5.addTextfield(name)
+       .setPosition(55, 165 + (60 * x))
+       .setSize(255, 40)
+       .setColor(color(60, 60, 60))
+       .setCaptionLabel("")
+       .setColorForeground(color(75, 75, 75))
+       .setColorBackground(color(255, 255, 255))
+       .setFont(font3)
+       .setFocus(x == 0)
+       .setAutoClear(false)
+       .hide();
+    
+    name = "d" + x;
+    cp5.addTextfield(name)
+       .setPosition(350, 165 + (60 * x))
+       .setSize(255, 40)
+       .setColor(color(60, 60, 60))
+       .setCaptionLabel("")
+       .setColorForeground(color(75, 75, 75))
+       .setColorBackground(color(255, 255, 255))
+       .setFont(font3)
+       .setFocus(false)
+       .setAutoClear(false)
+       .hide();
+     
+  }
+}
+
+// activated in CreateSet
+void setupCPButtons() {
+  cp5.addButton("addCard")
+     .setOff()
+     .setPosition(248, 547)
+     .setSize(170, 37)
+     .setColorForeground(color(15, 133, 88))
+     .setColorBackground(color(183, 217, 177))
+     .setColorCaptionLabel(color(85, 85, 85))
+     .align(290, 525, 100, 400)
+     .setCaptionLabel("")
+     .hide();
+
+  cp5.addButton("test")
+     .setOff()
+     .setPosition(400, 10)
+     .setSize(50, 50)
+     .setColorForeground(color(15, 133, 88))
+     .setColorBackground(color(183, 217, 177))
+     .hide();
+}   
+
 

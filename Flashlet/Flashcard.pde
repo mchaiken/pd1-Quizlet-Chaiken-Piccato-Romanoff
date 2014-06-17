@@ -4,6 +4,7 @@
  Flashcard next = null;
  boolean starred;
  boolean isRevealed=false;
+ 
  Flashcard(String t, String d) {
   term = t;
   definition = d; 
@@ -17,6 +18,7 @@
  void star() {
    starred = !starred;
  }
+ 
  void setNext(Flashcard f) {
   next = f;
  }
@@ -28,10 +30,23 @@
  String getDef() {
   return definition; 
  }
+ 
  Flashcard next() {
   return next;
  }
  
+  String setTerm(String newTerm) {
+    String oldTerm = term;
+    term = newTerm;
+    return oldTerm;
+  }
+
+  String setDefinition(String newDefinition) {
+    String oldDefinition = definition;
+    definition = newDefinition;
+    return oldDefinition;
+  }
+
  String toString() {
   return "TERM: " + term + " DEF: " + definition;
  }
