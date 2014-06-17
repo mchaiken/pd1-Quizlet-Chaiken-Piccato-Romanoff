@@ -8,6 +8,19 @@ void loadingPage(String functiontext) {
   if (cp5.get("star").isVisible() && page != "quiz") {
     cp5.get("star").hide();
   }
+  if(fT=="home"){
+          for (int x = 0; x < 6; x++) {
+        String name = "t" + x;
+        println(name);
+        cp5.get(name).hide();
+      }
+      for (int x = 0; x < 6; x++) {
+        String name = "d" + x;
+        println(name);
+        cp5.get(name).hide();
+      }
+      cp5.get("addCard").hide();
+  }
 
 
   if (millis() < time +3000 ) {
@@ -39,6 +52,7 @@ void loadingPage(String functiontext) {
       cp5.get(Textfield.class, "definition").hide();
       cp5.get("star").hide();
       textAlign(LEFT);
+
     } else if (functiontext.equals("learn")) {
       currentLearn = new Learn(quizName);
     } else if (functiontext.equals("quiz")) {

@@ -3,7 +3,7 @@ String[] defValues = new String[6];
 ArrayList<Flashcard> flashcards;
 int lowestIndex;
 myButton home = new myButton("Back", "home", "small", 100, 20);
-SubmitButton submit = new SubmitButton("Submit", "submit", "small", 350, 700);
+SubmitButton submit = new SubmitButton("Submit", "submit", "small", 350, 100);
 boolean shift = false;
 
 void setupCreateSet() {

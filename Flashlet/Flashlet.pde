@@ -84,9 +84,10 @@ void draw() {
   } else if (page.equals("setName")) {
     setName();
   } else if (page.equals("newSet")) {
-   updateCreateSet();
+    updateCreateSet();
+    submit.draw();
   } else if (page.equals("createSet")) {
-   updateCreateSet();
+    updateCreateSet();
   } else if (page.equals("loading")) {
     loadingPage(fT);
   } else if (page.equals("learn")) {
@@ -116,8 +117,8 @@ void unstar(int theValue) {
 // activated in CreateSet
 void setupCPBoxes() {
   for (int x = 0; x < 6; x++) {
-  termValues[x] = x + "";
-  defValues[x] = x + "";
+    termValues[x] = x + "";
+    defValues[x] = x + "";
     String name = "t" + x;
     println(name);
     cp5.addTextfield(name)
@@ -130,9 +131,9 @@ void setupCPBoxes() {
                   .setFont(font3)
                     .setFocus(x == 0)
                       .setAutoClear(false)
-                      .setText("")
-            
-              
+                        .setText("")
+
+
                           .hide();
 
     name = "d" + x;
@@ -146,9 +147,9 @@ void setupCPBoxes() {
                   .setFont(font3)
                     .setFocus(false)
                       .setAutoClear(false)
-                      .setText("")
-                   
-                        .hide();
+                        .setText("")
+
+                          .hide();
   }
 }
 
@@ -184,5 +185,7 @@ void setupCallbacks() {
       }
     }
   };
-    cp5.addCallback(a);
+  cp5.addCallback(a);
+  */
 }
+

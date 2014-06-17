@@ -3,9 +3,8 @@ TextBox[] tb;
 int boxOver = -1;
 int boxPressed = -1;
 int index=0;
-/*
-myButton home=new myButton("Back", "home", "small", 100, 20);
-SubmitButton submit=new SubmitButton("Submit", "submit", "small", 350, 570);
+
+
 
 void newSet() {
   update(mouseX, mouseY);
@@ -54,7 +53,7 @@ void update(int mX, int mY) {
     boxOver = -1;
   }
 }
-*/
+
 
 void mousePressed() {
   if (boxOver != -1) {
