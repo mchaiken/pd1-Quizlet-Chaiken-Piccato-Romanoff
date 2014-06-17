@@ -7,5 +7,6 @@ void selectQuizType(){
   image(img, 0, 0);
   learn.draw(); 
   quiz.draw();
+  home.draw();
   
 }

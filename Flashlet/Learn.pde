@@ -1,3 +1,4 @@
+int qlen;
 class Learn {
   Learn(String setName) {
     println(page);
@@ -11,6 +12,7 @@ class Learn {
       Flashcard f = new Flashcard(term, definition);
       queue.enqueue(f);
     }
+    qlen=queue.len;
     size(700, 600); 
     background(188, 210, 238);
      cp5.get(Textfield.class, "definition").show();
@@ -29,6 +31,7 @@ class Learn {
   }
   
   void checkAnswer() {
+    if (qlen > 0){
     println("check");
     println(cp5.get(Textfield.class, "definition").getText());
     
@@ -39,17 +42,30 @@ class Learn {
       println("empty");
       revealDefinition();
       queue.enqueue(currentCard);
+      qlen++;
     }
     else if (currentCard.isRevealed) {
       currentCard.isRevealed=false;
       currentCard = queue.dequeue();
       if (currentCard != null) {
         newFlashcard();
+        
       }
     }
+    }
+    else{
+      exitQuiz(); 
+    }
+  }
+   void exitQuiz() {
+   showMessageDialog(null, "You have finished your quiz!");
+   page = "loading";
+   fT="selectType";
+   
   }
 
   void revealDefinition() {
+    qlen--;
     fill(0);
     textFont(font, 30);
     textAlign(CENTER);

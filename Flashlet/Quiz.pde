@@ -40,10 +40,8 @@ class Quiz {
   
   void exitQuiz() {
    showMessageDialog(null, "You have finished your quiz!");
-   cp5.get("star").hide();
-   cp5.get("unstar").hide();
-   page = "home";
-   homePage();
+   page = "loading";
+   fT="selectType";
    
   }
   
