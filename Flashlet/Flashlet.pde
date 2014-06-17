@@ -4,11 +4,13 @@ import java.util.*;
 import java.io.*;
 import static javax.swing.JOptionPane.*;
 import static javax.swing.JFrame.*;
+PrintWriter writer = createWriter("accounts.txt");
 
 PFont font, font2, font3, font4, font5;
 boolean setup = false;
 String page = "loading";
 String quizName="";
+String user = "";
 Quiz currentQuiz;
 Learn currentLearn;
 String fT;
@@ -31,7 +33,7 @@ void setup() {
 
   nonLoopingGif = new Gif(this, "loading.gif");
   nonLoopingGif.play();
-  fT="home";
+  fT="login";
   font=loadFont("Baskerville-SemiBold-48.vlw");
   font2=createFont("Baskerville-SemiBold-48.vlw", 20);
   currentQuiz = null;
@@ -63,12 +65,6 @@ void setup() {
   setupCPBoxes();
   setupCPButtons();
   
-  Queue test = new Queue();
-  Flashcard a = new Flashcard("A", "B");
-  Flashcard b = new Flashcard("B", "C");
-  a.setNext(b);
-  test.enqueue(a);
-
   // saves the String names of the CPTextfields for easy iteration
   for (int x = 0; x < 6; x++) {
     boxNames[x] = "t" + x;
@@ -81,7 +77,10 @@ void setup() {
 }
 
 void draw() {
-  if (page.equals("home")) {
+  if (page.equals("login")) {
+    login();
+  }
+  else if (page.equals("home")) {
     homePage();
   } else if (page.equals("setName")) {
     setName();

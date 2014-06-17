@@ -1,15 +1,15 @@
 import gifAnimation.*;
 
 void loadingPage(String functiontext) {
-  
-   if(cp5.get("definition").isVisible() && page != "learn"){
-     cp5.get("definition").hide();
-   }
-     if(cp5.get("star").isVisible() && page != "quiz"){
-     cp5.get("star").hide();
-   }
-   
-   
+
+  if (cp5.get("definition").isVisible() && page != "learn") {
+    cp5.get("definition").hide();
+  }
+  if (cp5.get("star").isVisible() && page != "quiz") {
+    cp5.get("star").hide();
+  }
+
+
   if (millis() < time +3000 ) {
     image(nonLoopingGif, width/2 - nonLoopingGif.width/2, height / 2 - nonLoopingGif.height / 2);
   } else {
@@ -23,9 +23,8 @@ void loadingPage(String functiontext) {
       fill(250, 182, 8);
       setName();
       //setName=name.getText();
-    }
-    if (functiontext.equals("loadSet")) {
-      File folder = new File("pd1-Quizlet-Chaiken-Piccato-Romanoff/Flashlet/cardSets");
+    } else if (functiontext.equals("loadSet")) {
+      File folder = new File("pd1-Quizlet-Chaiken-Piccato-Romanoff/Flashlet/accounts/"+user+"/");
       draw=true;
       File[] listOfFiles = folder.listFiles();
       text("Select a Set to Study:", 30, 30);
@@ -49,6 +48,25 @@ void loadingPage(String functiontext) {
       currentLearn = new Learn(quizName);
     } else if (functiontext.equals("quiz")) {
       currentQuiz = new Quiz(quizName);
+    } else if (functiontext.equals("logIn")) {
+      String tryUser = showInputDialog("Please enter your user name");
+      File accountFolder = new File("pd1-Quizlet-Chaiken-Piccato-Romanoff/Flashlet/accounts/");
+      File[] listOfAccounts = accountFolder.listFiles();
+      int i = 0;
+      while (i < listOfAccounts.length && ! (listOfAccounts[i].getName ().equals(tryUser))) {
+        i++;
+      }
+      if (i == listOfAccounts.length) {
+        showMessageDialog(null, "User name not found");
+        functiontext = "login";
+      } else {
+        user = tryUser;
+        functiontext="home";
+      }
+    } else if (functiontext.equals("createA")) {
+      user = showInputDialog("Enter your new account Name");
+      createOutput("accounts/" + user + "/dummy.txt");
+      functiontext = "home";
     }
     page=functiontext;
   }
