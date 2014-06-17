@@ -6,6 +6,7 @@ import static javax.swing.JOptionPane.*;
 import static javax.swing.JFrame.*;
 String page = "loading";
 String quizName="";
+String user="";
 Quiz currentQuiz;
 Learn currentLearn;
 PFont font; 
@@ -26,7 +27,7 @@ void setup() {
 
   nonLoopingGif = new Gif(this, "loading.gif");
   nonLoopingGif.play();
-  fT="home";
+  fT="login";
   font=loadFont("Baskerville-SemiBold-48.vlw");
   font2=createFont("Baskerville-SemiBold-48.vlw", 20);
   currentQuiz = null;
@@ -60,7 +61,10 @@ void setup() {
 }
 
 void draw() {
-  if (page.equals("home")) {
+  if(page.equals("login")){
+    login();
+  }
+  else if (page.equals("home")) {
     homePage();
   } else if (page.equals("setName")) {
     setName();

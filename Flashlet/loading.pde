@@ -21,7 +21,7 @@ void loadingPage(String functiontext) {
       setName();
       //setName=name.getText();
     }
-    if (functiontext.equals("loadSet")) {
+    else if (functiontext.equals("loadSet")) {
       File folder = new File("pd1-Quizlet-Chaiken-Piccato-Romanoff/Flashlet/cardSets");
       draw=true;
       File[] listOfFiles = folder.listFiles();
@@ -46,6 +46,14 @@ void loadingPage(String functiontext) {
       currentLearn = new Learn(quizName);
     } else if (functiontext.equals("quiz")) {
       currentQuiz = new Quiz(quizName);
+    }
+    else if(functiontext.equals("logIn")){
+      user = showInputDialog("Please enter your user name");
+      functiontext="home";
+    }
+    else if(functiontext.equals("createA")){
+      user = showInputDialog("Enter your new account Name");
+      functiontext="home";
     }
     page=functiontext;
   }
