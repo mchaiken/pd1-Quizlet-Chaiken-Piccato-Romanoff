@@ -48,6 +48,15 @@ void setup() {
   cp5.get("definition").hide();
   cp5.addButton("star").setImage(tintedStar).setPosition(170, 56).setSize(60, 50).hide();
   cp5.addButton("unstar").setImage(starImg).setPosition(170,55).setSize(60,50).hide();
+  
+  
+  Queue test = new Queue();
+  Flashcard a = new Flashcard("A", "B");
+  Flashcard b = new Flashcard("B", "C");
+  a.setNext(b);
+  test.enqueue(a);
+  println(test.toString());
+  
 }
 
 void draw() {
@@ -76,6 +85,7 @@ void star(int theValue) {
   cp5.get("star").hide();
   cp5.get("unstar").show();
   currentCard.star();
+  println(currentCard.toString() + " " + currentCard.starred);
 }
 
   
@@ -83,5 +93,7 @@ void unstar(int theValue) {
   cp5.get("unstar").hide();
   cp5.get("star").show();
   currentCard.star();
+  
+  
 }
 

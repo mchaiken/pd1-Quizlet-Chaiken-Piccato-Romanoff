@@ -1,5 +1,5 @@
 PImage cards, starImg ;
-Queue queue;
+Queue queue, starred;
 boolean defDisplayed;
 Flashcard currentCard;
 String set;
@@ -10,6 +10,7 @@ class Quiz {
 
     set = setName;
     queue = new Queue();
+    starred = new Queue();
     String[] data = loadStrings("cardSets/" + set + ".txt");
 
     for (String d : data) {
@@ -30,18 +31,11 @@ class Quiz {
     fill(80);
     text(setName, 350, 30);
     textFont(font, 12);
-      text("If you are uncertain about a card, star it and it will appear again later", 350, 50);
+    text("If you are uncertain about a card, star it and it will appear again later", 350, 50);
     textFont(font, 30);
-    currentCard = queue.dequeue();
+    
+    newFlashcard();
 
-    fill(0);
-    textFont(font, 30);
-    textAlign(CENTER);
-    text(currentCard.getTerm(), 350, 158);
-
-    defDisplayed = false;
-
-    cp5.get("star").show();
   }
   
   void exitQuiz() {
@@ -52,38 +46,46 @@ class Quiz {
    homePage();
    
   }
-
-  void addCard() {
-    queue.enqueue(currentCard);
-  }
-
+  
   void newFlashcard() {
-    cp5.get("star").show();
-    cp5.get("unstar").hide();
-    print(currentCard.starred);
-    if (!currentCard.starred) {
-      cp5.get("star").show();
+    
+    currentCard = queue.dequeue();
+    defDisplayed = false;
+    if (currentCard != null) {
+      if (currentCard.starred) {
+        
+       cp5.get("unstar").show();
+       cp5.get("star").hide(); 
+      }
+      else {
+       cp5.get("unstar").hide();
+       cp5.get("star").show(); 
+      }
+     
+      image(cards, 0, 0);
+  
+      textFont(font, 30);
+      textAlign(CENTER);
+      fill(80);
+      text(set, 350, 30);
+  
+      fill(0);
+      textFont(font, 30);
+      textAlign(CENTER);
+      text(currentCard.getTerm(), 350, 158);
     }
-    image(cards, 0, 0);
-
-    textFont(font, 30);
-    textAlign(CENTER);
-    fill(80);
-    text(set, 350, 30);
-
-    fill(0);
-    textFont(font, 30);
-    textAlign(CENTER);
-    text(currentCard.getTerm(), 350, 158);
+    else {
+      exitQuiz(); 
+     
+    }
   }
 
   void revealDefinition() {
-
-    print(currentCard.starred);
     fill(0);
     textFont(font, 30);
     textAlign(CENTER);
     text(currentCard.getDef(), 350, 458);
+    defDisplayed = true;
   }
 }
 

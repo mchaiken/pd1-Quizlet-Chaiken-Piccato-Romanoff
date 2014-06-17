@@ -73,23 +73,14 @@ void mousePressed() {
 
 void keyPressed() {
   if (page == "quiz" && keyCode == 32) {
-    if (currentCard != null) {
     if (!defDisplayed) {
        currentQuiz.revealDefinition();
      }
      else {
-       if (currentCard.starred) {
-         queue.enqueue(currentCard);
-       }
-      currentCard = queue.dequeue();
-      if (currentCard != null) {
+       if (currentCard != null && currentCard.starred) {
+          queue.enqueue(currentCard);
+        }
        currentQuiz.newFlashcard();
-      }
-     }
-     defDisplayed = !defDisplayed;
-    }
-    else {
-      currentQuiz.exitQuiz();
     }
   } else if (page == "learn" && keyCode == 10) {
     println("key");

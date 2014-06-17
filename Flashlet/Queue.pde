@@ -10,12 +10,13 @@ class Queue {
   }
 
   void enqueue(Flashcard f) {
+    Flashcard g = new Flashcard(f.getTerm(), f.getDef());
     if (head == null) {
-      head = f;
-      tail = f;
+      head = g;
+      tail = g;
     } else {
-      tail.setNext(f);
-      tail = f;
+      tail.setNext(g);
+      tail = g;
     }
     len++;
   }
