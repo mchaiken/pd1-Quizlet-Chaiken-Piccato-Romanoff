@@ -18,7 +18,12 @@
 
 6/6 - Miranda - Still fighting with file output and Textboxes, they don't seem to be functioning outside Insert text page.
 
+6/6 - Aida - Fixed Quiz display, added blanked and line card image to "flip" thru cards
+
 6/7 - Miranda - Finally gave up on a page to type the name of the new set. Opted isntead for a GUI pop up window. Also altered images again. Creating a set is now fully functional and writes to an appropriately named file.
+6/10 - Aida - Added Quiz code again, incorporating Quiz into Flashlet from LoadSet. Made a cardSets folder to hold text files with Flashcard information. 
+
+6/11 - Switched to lined and blank card display. Succesfully able to create flashcards from cardSets and play Quiz.
 
 6/10 - Miranda - Created loading page with GifAnimation library. Adjusted button code to run through loading instead. Also created Select Set page so you can now select any of the already created sets to study.
 
@@ -28,4 +33,10 @@
 
 6/13 - Set up page to select which time of quizzing you want to do.
 
+6/14 - Aida - Added ControlP5 button stars to Quiz Game.
+
 6/15 - Fixed issue with keyboard functionallity and other merge issues. Also set up Learn so that missed words are added back to the queue.
+
+6/15 - Finalizing star function, adding message at the end of quiz. 
+
+6/16 - Finished star function, added ability to create account, log in, and pull up sets for a specific account. Added accounts folder. 
