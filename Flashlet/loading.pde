@@ -17,12 +17,7 @@ void loadingPage(String functiontext) {
 
     if (functiontext.equals("newSet")) {
       setupCreateSet();
-      textSize(40);
-      text("Term", 40, 70);
-      text("Definition", 390, 70); 
-      fill(250, 182, 8);
       setName();
-      //setName=name.getText();
     } else if (functiontext.equals("loadSet")) {
       File folder = new File("pd1-Quizlet-Chaiken-Piccato-Romanoff/Flashlet/accounts/"+user+"/");
       draw=true;
