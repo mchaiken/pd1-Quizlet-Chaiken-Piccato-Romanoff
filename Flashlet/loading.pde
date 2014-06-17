@@ -22,7 +22,7 @@ void loadingPage(String functiontext) {
       //setName=name.getText();
     }
     else if (functiontext.equals("loadSet")) {
-      File folder = new File("pd1-Quizlet-Chaiken-Piccato-Romanoff/Flashlet/cardSets");
+      File folder = new File("pd1-Quizlet-Chaiken-Piccato-Romanoff/Flashlet/accounts/"+user+"/");
       draw=true;
       File[] listOfFiles = folder.listFiles();
       text("Select a Set to Study:", 30, 30);
@@ -48,12 +48,29 @@ void loadingPage(String functiontext) {
       currentQuiz = new Quiz(quizName);
     }
     else if(functiontext.equals("logIn")){
-      user = showInputDialog("Please enter your user name");
-      functiontext="home";
+      String tryUser = showInputDialog("Please enter your user name");
+      File accountFolder = new File("pd1-Quizlet-Chaiken-Piccato-Romanoff/Flashlet/accounts/");
+      File[] listOfAccounts = accountFolder.listFiles();
+      int i = 0;
+      while (i < listOfAccounts.length && !(listOfAccounts[i].getName().equals(tryUser))) {
+       i++;
+      }
+      if (i == listOfAccounts.length) {
+       showMessageDialog(null,"User name not found");
+       functiontext = "login";
+      }
+      else {
+        user = tryUser;
+        functiontext="home";
+      }
+      
+      
     }
     else if(functiontext.equals("createA")){
       user = showInputDialog("Enter your new account Name");
+      createOutput("accounts/" + user+ "/dummy.txt");
       functiontext="home";
+      
     }
     page=functiontext;
   }

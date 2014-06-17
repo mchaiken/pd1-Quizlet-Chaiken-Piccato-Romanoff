@@ -11,7 +11,7 @@ class Quiz {
     set = setName;
     queue = new Queue();
     starred = new Queue();
-    String[] data = loadStrings("cardSets/" + set + ".txt");
+    String[] data = loadStrings("accounts/" + user+ "/" + set + ".txt");
 
     for (String d : data) {
       int space = d.indexOf(" ");

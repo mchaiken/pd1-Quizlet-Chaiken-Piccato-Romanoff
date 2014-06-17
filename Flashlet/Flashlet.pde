@@ -4,6 +4,7 @@ import java.util.*;
 import java.io.*;
 import static javax.swing.JOptionPane.*;
 import static javax.swing.JFrame.*;
+PrintWriter writer;
 String page = "loading";
 String quizName="";
 String user="";
@@ -25,6 +26,7 @@ void setup() {
   background(188, 210, 238);
   time=millis();
 
+  writer = createWriter("accounts.txt");
   nonLoopingGif = new Gif(this, "loading.gif");
   nonLoopingGif.play();
   fT="login";
@@ -49,14 +51,6 @@ void setup() {
   cp5.get("definition").hide();
   cp5.addButton("star").setImage(tintedStar).setPosition(170, 56).setSize(60, 50).hide();
   cp5.addButton("unstar").setImage(starImg).setPosition(170,55).setSize(60,50).hide();
-  
-  
-  Queue test = new Queue();
-  Flashcard a = new Flashcard("A", "B");
-  Flashcard b = new Flashcard("B", "C");
-  a.setNext(b);
-  test.enqueue(a);
-  println(test.toString());
   
 }
 
