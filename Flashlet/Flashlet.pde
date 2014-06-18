@@ -43,7 +43,7 @@ void setup() {
 
   // fonts used in CreateSet
   font3 = createFont("Futura-CondensedMedium", 24);
-  font4 = createFont("CenturyGothic-Bold", 36);
+  font4 = createFont("Bar", 36);
   font5 = createFont("CenturyGothic-Bold", 30); 
 
   starImg = loadImage("star.jpg");
@@ -95,6 +95,7 @@ void draw() {
   } else if (page.equals("quiz")) {
     home.draw();
   } else if (page.equals("loadSet")) {
+    home.draw();
     cardSets();
   } else if (page.equals("selectType")) {
     selectQuizType();
@@ -191,3 +192,4 @@ void setupCallbacks() {
 
 }
 */
+

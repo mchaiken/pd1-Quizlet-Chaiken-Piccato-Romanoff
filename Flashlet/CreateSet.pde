@@ -143,7 +143,6 @@ void updateNumbers() {
 /*
 void refreshBoxes() {
   for (int x = 0; x < 12; x++) {
-    println(x + "------");
     test();
     if (x < 6) {
       cp5.get(Textfield.class, boxNames[x]).setText(flashcards.get(lowestIndex + (Integer.parseInt(boxNames[x]))).getTerm());
@@ -174,13 +173,6 @@ void showCreateSetCP() {
 //cp5.get("addCard").show();
 }
 
-void test() { 
-  println("\n-----");
-  for (int x = 0; x < flashcards.size(); x++) {
-    println((x + 1) + " - " + flashcards.get(x));
-    }
-  println("-----"); 
-}
 void updateCard(String s) {
   if (s.equals("")) {
     return;

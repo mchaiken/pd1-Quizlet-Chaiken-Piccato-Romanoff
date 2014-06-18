@@ -18,7 +18,6 @@ class Quiz {
         int space = d.indexOf(" ");
         String term = d.substring(0, space);
         String definition = d.substring(space+1);
-        println("-" + term + "-");
         if (term != "" && definition != "") {
           Flashcard f = new Flashcard(term, definition);
           queue.enqueue(f);
@@ -31,13 +30,7 @@ class Quiz {
     cards = loadImage("Cards.jpg");
     image(cards, 0, 0);
 
-    textFont(font, 30);
-    textAlign(CENTER);
-    fill(80);
-    text(setName, 350, 30);
-    textFont(font, 12);
-    text("If you are uncertain about a card, star it and it will appear again later", 350, 50);
-    textFont(font, 30);
+  
 
     newFlashcard();
   }
@@ -49,7 +42,7 @@ class Quiz {
   }
 
   void newFlashcard() {
-
+    
     currentCard = queue.dequeue();
     defDisplayed = false;
     if (currentCard != null) {
@@ -61,9 +54,16 @@ class Quiz {
         cp5.get("unstar").hide();
         cp5.get("star").show();
       }
-
+    
       image(cards, 0, 0);
-
+       
+      textFont(font, 30);
+      textAlign(CENTER);
+      fill(80);
+      text(set, 350, 30);
+      textFont(font, 12);
+      text("If you are uncertain about a card, star it and it will appear again later", 350, 50);
+      textFont(font, 30);
       textFont(font, 30);
       textAlign(CENTER);
       fill(80);

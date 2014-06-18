@@ -21,7 +21,6 @@ class  SubmitButton extends myButton {
       String ret = "";
       PrintWriter out = createWriter("accounts/" + user+"/"+flash_card_set_name+".txt");
       for (Flashcard f : flashcards) {
-        println(f);
         if (!(f.getDef() == "") && !(f.getTerm() == "")) {
           out.println(f.getDef() + " " + f.getTerm());
         }

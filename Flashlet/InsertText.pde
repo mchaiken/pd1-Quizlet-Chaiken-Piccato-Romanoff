@@ -1,4 +1,4 @@
-
+//InsertText is what we originally used for the CreateSet page, before we switched to using ControlP5 textfields found in CreateSet
 TextBox[] tb;
 int boxOver = -1;
 int boxPressed = -1;
@@ -83,9 +83,9 @@ void keyPressed() {
         }
        currentQuiz.newFlashcard();
     }
-  } else if (page == "learn" && keyCode == 10) {
-    println("key");
+  } else if (page == "learn" && keyCode == 10) { 
     currentLearn.checkAnswer();
+ 
   } else if (page == "newSet") {
      if (key == CODED) {
       if (keyCode == SHIFT) {

@@ -1,13 +1,11 @@
 int qlen;
 class Learn {
   Learn(String setName) {
-    println(page);
     set = setName;
     queue = new Queue();
     String[] data = loadStrings("accounts/"+user+"/" +setName + ".txt");
     for (String d : data) {
       if (!d.equals(" ")) {
-        println("start"+d+"end");
         int space = d.indexOf(" ");
         String term = d.substring(0, space);
         String definition = d.substring(space+1);
@@ -35,13 +33,10 @@ class Learn {
 
   void checkAnswer() {
     if (qlen > 0) {
-      println("check");
-      println(cp5.get(Textfield.class, "definition").getText());
 
       if (cp5.get(Textfield.class, "definition").getText().equals(currentCard.getDef()) && !currentCard.isRevealed) {
         revealDefinition();
       } else if (cp5.get(Textfield.class, "definition").getText().equals("") && !currentCard.isRevealed) {
-        println("empty");
         revealDefinition();
         queue.enqueue(currentCard);
         qlen++;
@@ -71,7 +66,6 @@ class Learn {
     currentCard.isRevealed=true;
   }
   void newFlashcard() {
-    println("new");
     image(cards, 0, 0);
 
     textFont(font, 30);

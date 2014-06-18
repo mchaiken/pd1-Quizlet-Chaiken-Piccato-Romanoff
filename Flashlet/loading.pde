@@ -11,12 +11,10 @@ void loadingPage(String functiontext) {
   if(fT=="home"){
           for (int x = 0; x < 6; x++) {
         String name = "t" + x;
-        println(name);
         cp5.get(name).hide();
       }
       for (int x = 0; x < 6; x++) {
         String name = "d" + x;
-        println(name);
         cp5.get(name).hide();
       }
       //cp5.get("addCard").hide();
@@ -35,13 +33,14 @@ void loadingPage(String functiontext) {
       File folder = new File("pd1-Quizlet-Chaiken-Piccato-Romanoff/Flashlet/accounts/"+user+"/");
       draw=true;
       File[] listOfFiles = folder.listFiles();
-      text("Select a Set to Study:", 30, 30);
+      textAlign(CENTER);
+      text("Select a Set to Study:", 400, 30);
       int x=0;
       t2=millis();
       for (int i = 0; i < listOfFiles.length; i++) {
         if (listOfFiles[i].isFile()) {
           //println(listOfFiles[i].getName());
-          if (!listOfFiles[i].getName().substring(0, listOfFiles[i].getName().indexOf(".")).equals("")) {
+          if (!listOfFiles[i].getName().substring(0, listOfFiles[i].getName().indexOf(".")).equals("") ) {
             sets.add(new CardSet(listOfFiles[i].getName().substring(0, listOfFiles[i].getName().indexOf(".")), 5, x*50+55+i*5));
             x++;
           }
