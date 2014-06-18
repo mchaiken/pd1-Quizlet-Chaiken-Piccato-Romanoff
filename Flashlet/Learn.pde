@@ -4,7 +4,7 @@ class Learn {
     println(page);
     set = setName;
     queue = new Queue();
-    String[] data = loadStrings("cardSets/" +setName + ".txt");
+    String[] data = loadStrings("accounts/+"user+"/" +setName + ".txt");
     for (String d : data) {
       int space = d.indexOf(" ");
       String term = d.substring(0, space);
