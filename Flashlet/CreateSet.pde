@@ -26,12 +26,12 @@ void setupCreateSet() {
   textAlign(CENTER);
   text("Term", 182.5, 150);
   text("Definition", 477.5, 150);
-  
+  /*
   fill(85, 85, 85);
   textFont(font5, 27);
   textAlign(CENTER);
   text("Add Card", 333, 538);
-  
+  */
   fill(85, 85, 85);
   textFont(font5, 27);
   textAlign(CENTER);
@@ -39,7 +39,6 @@ void setupCreateSet() {
   
   
   current = "t0";
-  lowestIndex = 0;
   flashcards = new ArrayList<Flashcard>();
   
   for (int i = 0; i < 6; i++) {
@@ -52,13 +51,14 @@ void setupCreateSet() {
   
   current = "t0";
   
+  home.draw();
+  submit.draw();
+  
   showCreateSetCP();
 }
 
 void updateCreateSet() {
   
-    home.draw();
-  submit.draw();
     for (String s : boxNames) {
           updateCard(s);
     }
@@ -74,27 +74,29 @@ static String getBox(int n) {
   }
 }
     
+    /*
 
 void controlEvent(ControlEvent theEvent) {
   if (theEvent.isAssignableFrom(Textfield.class)) {
     Integer index = lowestIndex + Integer.parseInt(theEvent.getName().substring(1, 2));
     if (theEvent.getName().substring(0, 1).equals("t")) {
       flashcards.get(index).setTerm(theEvent.getStringValue());
-      //test();
     }
     else if (theEvent.getName().substring(0, 1).equals("d")) {
       flashcards.get(index).setDefinition(theEvent.getStringValue());
-    //  test();
     }
   }
+  
   else if (theEvent.isAssignableFrom(Button.class) && (theEvent.getName().equals("addCard"))) {
     flashcards.add(new Flashcard("", ""));
     lowestIndex++;
     updateNumbers();
     //refreshBoxes();
   }
+  
 }
-
+*/
+/*
 void updateNumbers() {
   stroke(191, 193, 193);
   fill(191, 193, 193);
@@ -106,6 +108,7 @@ void updateNumbers() {
       text(lowestIndex + i + 1 + "", 27.5, 195 + (60 * i));
   }  
 }
+*/
 /*
 void refreshBoxes() {
   for (int x = 0; x < 12; x++) {
@@ -127,7 +130,7 @@ void showCreateSetCP() {
     cp5.get(s).show();
   }
 //cp5.get("test").show();
-  cp5.get("addCard").show();
+//cp5.get("addCard").show();
 }
   /*
 void test() {
@@ -148,10 +151,10 @@ void updateCard(String s) {
   else {
   String newVal = cp5.get(Textfield.class, s).getText();
   if (s.substring(0, 1).equals("t")) {
-    flashcards.get(lowestIndex + Integer.parseInt(current.substring(1, 2))).setTerm(newVal);
+    flashcards.get(Integer.parseInt(s.substring(1))).setDefinition(newVal);
   }
   else if (s.substring(0, 1).equals("d")) {
-    flashcards.get(lowestIndex + Integer.parseInt(current.substring(1, 2))).setDefinition(newVal);
+    flashcards.get(Integer.parseInt(s.substring(1))).setTerm(newVal);
   }
   }
 }

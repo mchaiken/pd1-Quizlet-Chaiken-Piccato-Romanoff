@@ -65,7 +65,7 @@ void setup() {
 
   // creates and hides CP Functionality for CreateSet 
   setupCPBoxes();
-  setupCallbacks();
+  //setupCallbacks();
   setupCPButtons();
 
   // saves the String names of the CPTextfields for easy iteration
@@ -84,7 +84,7 @@ void draw() {
   } else if (page.equals("setName")) {
     setName();
   } else if (page.equals("newSet")) {
-    updateCreateSet();
+    //updateCreateSet();
     submit.draw();
   } else if (page.equals("createSet")) {
     updateCreateSet();
@@ -120,7 +120,7 @@ void setupCPBoxes() {
     termValues[x] = x + "";
     defValues[x] = x + "";
     String name = "t" + x;
-    println(name);
+    //println(name);
     cp5.addTextfield(name)
       .setPosition(55, 165 + (60 * x))
         .setSize(255, 40)
@@ -155,6 +155,7 @@ void setupCPBoxes() {
 
 // activated in CreateSet
 void setupCPButtons() {
+  /*
   cp5.addButton("addCard")
     .setOff()
       .setPosition(248, 547)
@@ -173,8 +174,9 @@ void setupCPButtons() {
           .setColorForeground(color(15, 133, 88))
             .setColorBackground(color(183, 217, 177))
               .hide();
+              */
 }
-
+/*
 void setupCallbacks() {
   CallbackListener a = new CallbackListener() {
     public void controlEvent(CallbackEvent theEvent) {
@@ -188,4 +190,4 @@ void setupCallbacks() {
   cp5.addCallback(a);
 
 }
-
+*/

@@ -19,7 +19,7 @@ void loadingPage(String functiontext) {
         println(name);
         cp5.get(name).hide();
       }
-      cp5.get("addCard").hide();
+      //cp5.get("addCard").hide();
   }
 
 

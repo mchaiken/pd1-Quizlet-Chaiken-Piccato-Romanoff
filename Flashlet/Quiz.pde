@@ -17,8 +17,11 @@ class Quiz {
       int space = d.indexOf(" ");
       String term = d.substring(0, space);
       String definition = d.substring(space+1);
+      println("-" + term + "-");
+      if (term != "" && definition != "") {
       Flashcard f = new Flashcard(term, definition);
       queue.enqueue(f);
+      }
     }
 
     size(700, 600); 

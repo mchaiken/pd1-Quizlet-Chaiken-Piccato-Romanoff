@@ -6,21 +6,23 @@ class  SubmitButton extends myButton {
 
   void mouseClicked() {
     if (hovered()) {
+      updateCreateSet();
       for (int x = 0; x < 6; x++) {
         String name = "t" + x;
-        println(name);
+        //println(name);
         cp5.get(name).hide();
       }
       for (int x = 0; x < 6; x++) {
         String name = "d" + x;
-        println(name);
+        //println(name);
         cp5.get(name).hide();
       }
-      cp5.get("addCard").hide();
+      //cp5.get("addCard").hide();
       String ret = "";
       PrintWriter out = createWriter("accounts/" + user+"/"+flash_card_set_name+".txt");
       for (Flashcard f : flashcards) {
-        if (!(f.getDef() == "" || f.getTerm() == "")) {
+        println(f);
+        if (!(f.getDef() == "") && !(f.getTerm() == "")) {
           out.println(f.getDef() + " " + f.getTerm());
         }
       }
