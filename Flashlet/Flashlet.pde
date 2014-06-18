@@ -24,7 +24,7 @@ double t2;
 Controller controller;
 PImage tintedStar;
 String[] boxNames = new String[12];
-String current;
+Textfield current;
 
 void setup() {
 
@@ -65,7 +65,6 @@ void setup() {
 
   // creates and hides CP Functionality for CreateSet 
   setupCPBoxes();
-  setupCallbacks();
   setupCPButtons();
 
   // saves the String names of the CPTextfields for easy iteration
@@ -175,17 +174,4 @@ void setupCPButtons() {
               .hide();
 }
 
-void setupCallbacks() {
-  CallbackListener a = new CallbackListener() {
-    public void controlEvent(CallbackEvent theEvent) {
-      if (theEvent.getAction() == ControlP5.ACTION_PRESSED) {
-        for (String s : boxNames) {
-          updateCard(s);
-        }
-      }
-    }
-  };
-  cp5.addCallback(a);
-
-}
 

@@ -47,10 +47,13 @@ class myButton {
   
 void mouseClicked() {
     if (hovered()) {
+
       time=millis();
       fT=functiontext;
      page="loading";
      background(188, 210, 238);
+     
+     
     }
   }
 }
