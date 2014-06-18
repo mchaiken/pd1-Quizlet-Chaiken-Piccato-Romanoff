@@ -31,6 +31,7 @@ void setupCreateSet() {
   textFont(font5, 27);
   textAlign(CENTER);
   text("Add Card", 333, 538);
+<<<<<<< HEAD
   */
   fill(85, 85, 85);
   textFont(font5, 27);
@@ -39,6 +40,11 @@ void setupCreateSet() {
   
   
   current = "t0";
+=======
+  
+  current = cp5.get(Textfield.class,"t0");
+  lowestIndex = 0;
+>>>>>>> 1b482ab68bdbbb06c9613d15cbdb540e03555584
   flashcards = new ArrayList<Flashcard>();
   
   for (int i = 0; i < 6; i++) {
@@ -47,6 +53,7 @@ void setupCreateSet() {
       textAlign(CENTER);
       text(lowestIndex + i + 1 + "", 27.5, 195 + (60 * i));
       flashcards.add(new Flashcard("", ""));
+<<<<<<< HEAD
   }
   
   current = "t0";
@@ -61,10 +68,40 @@ void updateCreateSet() {
   
     for (String s : boxNames) {
           updateCard(s);
-    }
-  
+=======
+  } 
+  showCreateSetCP();
 }
 
+void updateCreateSet() { 
+  home.draw();
+  submit.draw();
+  updateAll();
+}
+
+void updateCard(Textfield t) {
+  if (t.getName().substring(0, 1).equals("t") && (!(t.getText().equals(flashcards.get(lowestIndex + fieldIndex(t)).getTerm())))) {
+    flashcards.get(lowestIndex + fieldIndex(t)).setTerm(t.getText());
+  }
+  else if (t.getName().substring(0, 1).equals("d") && (!(t.getText().equals(flashcards.get(lowestIndex + fieldIndex(t)).getDef())))) {
+    flashcards.get(lowestIndex + fieldIndex(t)).setDefinition(t.getText());
+  }
+}
+
+void updateAll() {
+  for (Textfield t : getBoxes()) {
+    t.submit();
+    if (t.isFocus()) {
+      current = t;
+>>>>>>> 1b482ab68bdbbb06c9613d15cbdb540e03555584
+    }
+  }
+}
+
+Integer fieldIndex(Textfield t) {
+  return (lowestIndex + Integer.parseInt(t.getName().substring(1, 2)));
+}
+  
 static String getBox(int n) {
   if (n < 6) {
     return "t" + n;
@@ -73,6 +110,7 @@ static String getBox(int n) {
     return "d" + (n - 6);
   }
 }
+<<<<<<< HEAD
     
     /*
 
@@ -92,6 +130,26 @@ void controlEvent(ControlEvent theEvent) {
     lowestIndex++;
     updateNumbers();
     //refreshBoxes();
+=======
+
+void controlEvent(ControlEvent theEvent) {
+  if (theEvent.isAssignableFrom(Textfield.class)) {
+    if (theEvent.getName().length() == 2) {
+      Integer index = lowestIndex + Integer.parseInt(theEvent.getName().substring(1, 2));
+      if (theEvent.getName().substring(0, 1).equals("t")) {
+        flashcards.get(index).setTerm(theEvent.getStringValue());
+      }
+      else if (theEvent.getName().substring(0, 1).equals("d")) {
+        flashcards.get(index).setDefinition(theEvent.getStringValue());
+      }
+    }
+  }
+    else if (theEvent.isAssignableFrom(Button.class) && (theEvent.getName().equals("addCard"))) {
+      flashcards.add(new Flashcard("", ""));
+      lowestIndex++;
+      updateNumbers();
+      shiftBoxes();
+>>>>>>> 1b482ab68bdbbb06c9613d15cbdb540e03555584
   }
   
 }
@@ -108,6 +166,7 @@ void updateNumbers() {
       text(lowestIndex + i + 1 + "", 27.5, 195 + (60 * i));
   }  
 }
+<<<<<<< HEAD
 */
 /*
 void refreshBoxes() {
@@ -120,30 +179,41 @@ void refreshBoxes() {
     else {
       cp5.get(Textfield.class, boxNames[x]).setText(flashcards.get(lowestIndex + (Integer.parseInt(boxNames[x - 6]))).getDef());
     }
+=======
+
+void shiftBoxes() {
+  List<Textfield> l = getBoxes();
+  for (int x = 1; x < 6; x++) {
+    l.get(x - 1).setText(l.get(x).getText());
+    l.get(x + 6).setText(l.get(x + 7).getText());
+>>>>>>> 1b482ab68bdbbb06c9613d15cbdb540e03555584
   }
+  l.get(5).setText("");
+  l.get(12).setText("");
 }
-*/
 
 // shows the boxes and buttons 
 void showCreateSetCP() {
   for (String s : boxNames) {
     cp5.get(s).show();
   }
+<<<<<<< HEAD
 //cp5.get("test").show();
 //cp5.get("addCard").show();
+=======
+  cp5.get("addCard").show();
+>>>>>>> 1b482ab68bdbbb06c9613d15cbdb540e03555584
 }
-  /*
-void test() {
-  
-  println("-----");
+
+void test() { 
+  println("\n-----");
   for (int x = 0; x < flashcards.size(); x++) {
     println((x + 1) + " - " + flashcards.get(x));
     }
-  println("-----");
-  
+  println("-----"); 
 }
-*/
 
+<<<<<<< HEAD
 void updateCard(String s) {
   if (s.equals("")) {
     return;
@@ -157,9 +227,10 @@ void updateCard(String s) {
     flashcards.get(Integer.parseInt(s.substring(1))).setTerm(newVal);
   }
   }
+=======
+List<Textfield> getBoxes() {
+  return cp5.getAll(Textfield.class);
+>>>>>>> 1b482ab68bdbbb06c9613d15cbdb540e03555584
 }
-
-
-
 
 
