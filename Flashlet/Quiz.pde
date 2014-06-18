@@ -14,13 +14,15 @@ class Quiz {
     String[] data = loadStrings("accounts/" + user + "/" + set + ".txt");
 
     for (String d : data) {
-      int space = d.indexOf(" ");
-      String term = d.substring(0, space);
-      String definition = d.substring(space+1);
-      println("-" + term + "-");
-      if (term != "" && definition != "") {
-      Flashcard f = new Flashcard(term, definition);
-      queue.enqueue(f);
+      if (!d.equals(" ")) {
+        int space = d.indexOf(" ");
+        String term = d.substring(0, space);
+        String definition = d.substring(space+1);
+        println("-" + term + "-");
+        if (term != "" && definition != "") {
+          Flashcard f = new Flashcard(term, definition);
+          queue.enqueue(f);
+        }
       }
     }
 
@@ -36,48 +38,43 @@ class Quiz {
     textFont(font, 12);
     text("If you are uncertain about a card, star it and it will appear again later", 350, 50);
     textFont(font, 30);
-    
-    newFlashcard();
 
+    newFlashcard();
   }
-  
+
   void exitQuiz() {
-   showMessageDialog(null, "You have finished your quiz!");
-   page = "loading";
-   fT="selectType";
-   
+    showMessageDialog(null, "You have finished your quiz!");
+    page = "loading";
+    fT="selectType";
   }
-  
+
   void newFlashcard() {
-    
+
     currentCard = queue.dequeue();
     defDisplayed = false;
     if (currentCard != null) {
       if (currentCard.starred) {
-        
-       cp5.get("unstar").show();
-       cp5.get("star").hide(); 
+
+        cp5.get("unstar").show();
+        cp5.get("star").hide();
+      } else {
+        cp5.get("unstar").hide();
+        cp5.get("star").show();
       }
-      else {
-       cp5.get("unstar").hide();
-       cp5.get("star").show(); 
-      }
-     
+
       image(cards, 0, 0);
-  
+
       textFont(font, 30);
       textAlign(CENTER);
       fill(80);
       text(set, 350, 30);
-  
+
       fill(0);
       textFont(font, 30);
       textAlign(CENTER);
       text(currentCard.getTerm(), 350, 158);
-    }
-    else {
-      exitQuiz(); 
-     
+    } else {
+      exitQuiz();
     }
   }
 
